@@ -2,13 +2,14 @@
 import { chromium } from 'playwright'; import sharp from 'sharp'; import path from 'path'; import fs from 'fs';
 import { spawn } from 'child_process';
 const [f0, f1, out, scale] = [+process.argv[2], +process.argv[3], process.argv[4], +(process.argv[5] || 1)];
-const FPS = 30, SHUTTER = 0.5, Wd = Math.round(1080 * scale), Hd = Math.round(1920 * scale);
+const FPS = 30, SHUTTER = 0.5, HZ0 = /fmt=h/.test(process.env.Q || ''), Wd = Math.round((HZ0 ? 1920 : 1080) * scale), Hd = Math.round((HZ0 ? 1080 : 1920) * scale);
 const b = await chromium.launch({ args: ['--allow-file-access-from-files'] });
-const p = await b.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
+const Q = process.env.Q || ''; const HZ = /fmt=h/.test(Q);
+const p = await b.newPage({ viewport: { width: HZ ? 1920 : 1080, height: HZ ? 1080 : 1920 }, deviceScaleFactor: 1 });
 p.on('pageerror', e => console.log('ERR', e.message));
-await p.goto('file://' + path.resolve('index.html'));
+await p.goto('file://' + path.resolve('index.html') + (Q ? '?' + Q : ''));
 await p.waitForFunction(() => window.READY === true, null, { timeout: 30000 });
-fs.writeFileSync('events.json', JSON.stringify(await p.evaluate(() => window.EVENTS), null, 0));
+fs.writeFileSync(process.env.EVOUT || 'events.json', JSON.stringify(await p.evaluate(() => window.EVENTS), null, 0));
 const cdp = await p.context().newCDPSession(p);
 const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', `${Wd}x${Hd}`, '-r', '30', '-i', '-',
   '-c:v', 'libx264', '-preset', 'medium', '-crf', scale < 1 ? '22' : '10', '-pix_fmt', 'yuv420p', out], { stdio: ['pipe', 'inherit', 'inherit'] });

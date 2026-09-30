@@ -79,7 +79,7 @@ scene(12.5, 14.5, (root) => {
 }, (t, o) => {
   bg.setAttribute('fill', PL);
   const inA = t < 13.25, inB = t >= 13.25 && t < 14.0, inC = t >= 14.0;
-  o.a.setAttribute('visibility', inA ? 'visible' : 'hidden');
+  o.a.style.display = inA ? '' : 'none';
   o.b.style.display = inB ? 'block' : 'none';
   o.c.style.display = inC ? 'block' : 'none';
   if (inA) {

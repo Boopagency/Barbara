@@ -2,9 +2,10 @@ import { chromium } from 'playwright'; import sharp from 'sharp'; import path fr
 const times = process.argv[2].split(',').map(Number); const out = process.argv[3];
 const [cx, cy, cw, ch] = (process.argv[4] || '190,420,700,760').split(',').map(Number);
 const b = await chromium.launch({ args: ['--allow-file-access-from-files'] });
-const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
+const Q = process.env.Q || ''; const HZ = /fmt=h/.test(Q);
+const p = await b.newPage({ viewport: { width: HZ ? 1920 : 1080, height: HZ ? 1080 : 1920 } });
 p.on('pageerror', e => console.log('ERR', e.message));
-await p.goto('file://' + path.resolve('index.html'));
+await p.goto('file://' + path.resolve('index.html') + (Q ? '?' + Q : ''));
 await p.waitForFunction(() => window.READY === true);
 const tiles = [];
 for (const t of times) { await p.evaluate(t => window.seek(t), t);

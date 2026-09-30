@@ -23,10 +23,12 @@ html,body{margin:0;padding:0;background:#000;overflow:hidden}
 </div>
 <script src="data.js"></script>
 <script>
+// ?film=27 (default) or ?film=60 ; ?fmt=v|h
+const FILM = new URLSearchParams(location.search).get('film') || '27';
+const LIST = FILM === '60' ? ['core.js', 'film60a.js', 'film60b.js', 'film60c.js'] : ['core.js', 'film27.js', 'film2.js'];
 Promise.all([document.fonts.load("600 100px Fraunces"), document.fonts.load("500 40px Montserrat")]).then(() => {
-  const a = document.createElement('script'); a.src = 'film.js';
-  a.onload = () => { const b = document.createElement('script'); b.src = 'film2.js'; document.body.appendChild(b); };
-  document.body.appendChild(a);
+  const next = i => { if (i >= LIST.length) return; const s = document.createElement('script'); s.src = LIST[i]; s.onload = () => next(i + 1); document.body.appendChild(s); };
+  next(0);
 });
 </script>
 </body>

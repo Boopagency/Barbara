@@ -1,0 +1,11 @@
+import { chromium } from 'playwright'; import path from 'path'; import fs from 'fs';
+const Q = process.env.Q || ''; const HZ = /fmt=h/.test(Q);
+const b = await chromium.launch({ args: ['--allow-file-access-from-files'] });
+const p = await b.newPage({ viewport: { width: HZ ? 1920 : 1080, height: HZ ? 1080 : 1920 } });
+p.on('pageerror', e => console.log('ERR', e.message));
+await p.goto('file://' + path.resolve('index.html') + (Q ? '?' + Q : ''));
+await p.waitForFunction(() => window.READY === true);
+const ev = await p.evaluate(() => window.EVENTS);
+fs.writeFileSync(process.argv[2], JSON.stringify(ev));
+const types = {}; for (const e of ev) types[e.type] = (types[e.type] || 0) + 1; console.log(JSON.stringify(types));
+await b.close();
