@@ -1,0 +1,8 @@
+node_modules/
+public/assets/
+out/*
+!out/barbara-fonseca-brand-film.mp4
+!out/contact-sheet.jpg
+!out/contact-sheet-*.jpg
+tools/.ink-reference.png
+tools/__pycache__/

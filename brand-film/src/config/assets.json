@@ -1,0 +1,19 @@
+{
+  "_doc": "Mapa semântico dos assets ORIGINAIS do repositório (pasta ../Barbara). scripts/sync-assets.mjs copia cada um para public/assets/<chave>.png. Para trocar uma imagem, altere só o caminho aqui.",
+  "barbaraArch":      "Barbara/Barbara/Imagem do ChatGPT 30 de set. de 2026, 11_14_27-10.png",
+  "barbaraPortrait":  "Barbara/Barbara/Imagem do ChatGPT 30 de set. de 2026, 11_14_20-2.png",
+  "barbaraStudio":    "Barbara/Barbara/Imagem do ChatGPT 30 de set. de 2026, 11_14_19-1.png",
+  "barbaraSofa":      "Barbara/Barbara/Imagem do ChatGPT 30 de set. de 2026, 11_14_21-4.png",
+  "barbaraWorking":   "Barbara/Barbara/Imagem do ChatGPT 30 de set. de 2026, 11_14_32-15.png",
+  "careHands":        "Barbara/Pets/Imagem do ChatGPT 30 de set. de 2026, 11_14_20-3.png",
+  "dogGolden":        "Barbara/Pets/Imagem do ChatGPT 30 de set. de 2026, 11_14_22-5.png",
+  "dogHeadTilt":      "Barbara/Pets/Imagem do ChatGPT 30 de set. de 2026, 11_14_23-6.png",
+  "dogWalking":       "Barbara/Pets/Imagem do ChatGPT 30 de set. de 2026, 11_14_24-7.png",
+  "brandBook":        "Barbara/mockups/Imagem do ChatGPT 30 de set. de 2026, 11_14_25-8.png",
+  "cards":            "Barbara/mockups/Imagem do ChatGPT 30 de set. de 2026, 11_14_26-9.png",
+  "stationery":       "Barbara/mockups/Imagem do ChatGPT 30 de set. de 2026, 11_14_28-11.png",
+  "box":              "Barbara/mockups/Imagem do ChatGPT 30 de set. de 2026, 11_14_29-12.png",
+  "coat":             "Barbara/mockups/Imagem do ChatGPT 30 de set. de 2026, 11_14_30-13.png",
+  "digital":          "Barbara/mockups/Imagem do ChatGPT 30 de set. de 2026, 11_14_31-14.png",
+  "notebook":         "Barbara/mockups/Imagem do ChatGPT 30 de set. de 2026, 11_14_32-16.png"
+}
