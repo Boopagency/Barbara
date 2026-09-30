@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Ponto de vista</title>
+<style>
+@font-face{font-family:'Fraunces';src:url(fonts/fraunces.woff2) format('woff2');font-weight:100 900;}
+@font-face{font-family:'Montserrat';src:url(fonts/montserrat.woff2) format('woff2');font-weight:100 900;}
+html,body{margin:0;padding:0;background:#000;overflow:hidden}
+#frame{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F7F0E4}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#dom3d{position:absolute;left:0;top:0;width:1080px;height:1920px;perspective:1600px;overflow:hidden;pointer-events:none}
+.serif{font-family:'Fraunces';font-weight:600;font-variation-settings:'SOFT' 100,'WONK' 0,'opsz' 144}
+.sans{font-family:'Montserrat';font-weight:500}
+.paper{position:absolute;transform-style:preserve-3d;backface-visibility:hidden}
+</style>
+</head>
+<body>
+<div id="frame">
+  <svg id="stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920"></svg>
+  <div id="dom3d"></div>
+  <svg id="over" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920" style="position:absolute;left:0;top:0"></svg>
+</div>
+<script src="data.js"></script>
+<script>
+Promise.all([document.fonts.load("600 100px Fraunces"), document.fonts.load("500 40px Montserrat")]).then(() => {
+  const a = document.createElement('script'); a.src = 'film.js';
+  a.onload = () => { const b = document.createElement('script'); b.src = 'film2.js'; document.body.appendChild(b); };
+  document.body.appendChild(a);
+});
+</script>
+</body>
+</html>
