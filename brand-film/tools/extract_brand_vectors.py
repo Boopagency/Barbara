@@ -58,7 +58,9 @@ def potrace_paths(bitmap):
 def trace_region(alpha, box, name):
     x0, y0, x1, y1 = box
     pad = 6
-    crop = alpha[y0 - pad:y1 + pad, x0 - pad:x1 + pad]
+    crop = alpha[y0 - pad:y1 + pad, x0 - pad:x1 + pad].copy()
+    # a margem serve só ao potrace: zera o que é de letras/linhas vizinhas
+    crop[:pad, :] = 0; crop[-pad:, :] = 0; crop[:, :pad] = 0; crop[:, -pad:] = 0
     big = np.asarray(Image.fromarray((crop * 255).astype(np.uint8)).resize(
         (crop.shape[1] * UP, crop.shape[0] * UP), Image.BICUBIC), float) / 255
     bm = big > 0.5

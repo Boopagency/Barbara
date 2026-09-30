@@ -22,6 +22,14 @@ export const sansStyle: React.CSSProperties = {
   textTransform: "uppercase",
 };
 
+/** fora da janela de vida a linha some (evita acentos/descendentes na borda da máscara) */
+export function lineVisible(frame: number, start: number, i: number, exitAt?: number) {
+  const T = MOTION.type;
+  if (frame < start + i * T.lineStagger) return false;
+  if (exitAt !== undefined && frame > exitAt + i * Math.round(T.lineStagger * 0.6) + T.lineOut) return false;
+  return true;
+}
+
 /** estilo da linha i para um bloco que entra em `start` e sai em `exitAt` */
 export function lineMotion(frame: number, start: number, i: number, exitAt?: number, n = 1) {
   const T = MOTION.type;
@@ -69,7 +77,7 @@ export const Lines: React.FC<{
             marginTop: i === 0 ? "-0.14em" : "-0.24em",
           }}
         >
-          <span style={{ display: "inline-block", whiteSpace: "nowrap", ...lineMotion(frame, start, i, exitAt, lines.length) }}>
+          <span style={{ display: "inline-block", whiteSpace: "nowrap", visibility: lineVisible(frame, start, i, exitAt) ? "visible" : "hidden", ...lineMotion(frame, start, i, exitAt, lines.length) }}>
             {l}
             {i === lines.length - 1 ? tail : null}
           </span>

@@ -61,7 +61,7 @@ export const MOTION = {
     lineIn: 24, // duração da entrada de cada linha
     lineStagger: 5, // atraso entre linhas
     lineOut: 14,
-    riseEm: 1.12, // subida dentro da máscara (em)
+    riseEm: 1.3, // subida dentro da máscara (em) — maior que a altura do acento
     trackingFrom: 0.05, // tracking inicial (em) → 0
   },
   label: { in: 28, trackingFrom: 0.6, trackingTo: 0.3 },
@@ -111,7 +111,7 @@ export const ANCHORS: Record<string, Anchor> = {
   bookBoxWordmark: { x: 195, y: 333, w: 155 },
   cardsWordmark: { x: 440, y: 470, w: 310 },
   cardsSymbol: { x: 708, y: 895, w: 230 },
-  coatSymbol: { x: 672, y: 778, w: 170 },
+  coatSymbol: { x: 670, y: 781, w: 143 }, // calibrado no frame renderizado
   coatWordmark: { x: 468, y: 795, w: 260 },
   boxWordmark: { x: 463, y: 590, w: 205 },
 };
@@ -155,8 +155,8 @@ export const CAMERAS: Record<string, CameraKey[]> = {
   ],
   // S04 — câmera sobre o VETOR do símbolo (unidades do viewBox 350×385)
   symbol: [
-    { f: 0, x: 62, y: 108, s: 7.4 }, // A: orelha esquerda
-    { f: 23, x: 100, y: 72, s: 6.8, ease: "linear" },
+    { f: 0, x: 95, y: 104, s: 5.0 }, // A: orelha esquerda (forma inteira legível)
+    { f: 23, x: 128, y: 80, s: 4.7, ease: "linear" },
     { f: 24, x: 165, y: 150, s: 4.6 }, // corte B: olho, piscada, focinho
     { f: 49, x: 160, y: 160, s: 4.3, ease: "linear" },
     { f: 50, x: 175, y: 270, s: 3.8 }, // corte C: língua
@@ -191,8 +191,9 @@ export const CAMERAS: Record<string, CameraKey[]> = {
     k(bookEnd, 116, { ease: "in" }), // push no wordmark da caixa → match cut
   ],
   // S06 — aplicações
-  cards: [k(cardsStart, 0), { f: 26, x: 570, y: 701, s: 1.37 }, k(cardsEnd, 48, { ease: "in" })],
-  coat: [k(coatStart, 0), { f: 28, x: 560, y: 760, s: 1.62 }, k(coatEnd, 48, { ease: "in" })],
+  // o keyframe final fica no ÚLTIMO frame exibido antes do corte (47), senão o match cut erra
+  cards: [k(cardsStart, 0), { f: 26, x: 570, y: 701, s: 1.37 }, k(cardsEnd, 47, { ease: "in" })],
+  coat: [k(coatStart, 0), { f: 28, x: 560, y: 760, s: 1.62 }, k(coatEnd, 47, { ease: "in" })],
   box: [k(boxStart, 0), { f: 30, x: 600, y: 700, s: 1.52, r: 0 }, { f: 54, x: 600, y: 690, s: 1.56, ease: "linear" }],
   digital: [
     { f: 0, x: 380, y: 760, s: 1.66 },

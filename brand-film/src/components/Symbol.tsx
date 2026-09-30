@@ -29,7 +29,8 @@ export const DogSymbol: React.FC<{
   const id = useMemo(() => `dogmask${uid++}`, []);
   const windows = MOTION.symbolDraw;
   const p = (k: Part) => {
-    if (parts && parts[k] !== undefined) return clamp01(parts[k]!);
+    // com `parts`, peça não informada = não desenhada
+    if (parts) return clamp01(parts[k] ?? 0);
     const [a, b] = windows[k];
     return EASE.inOut(clamp01((t - a) / (b - a)));
   };

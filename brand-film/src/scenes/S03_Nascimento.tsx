@@ -14,6 +14,8 @@ import { prog } from "../lib/ease";
  * onde o símbolo vai nascer (S04). A paleta é apresentada como espaço, não como amostra.
  */
 const T = { salvia: 44, salviaEnd: 66, creme: 84, cremeEnd: 106 };
+/** fragmento: escala e posição (orelha direita encostada na borda, topo da cabeça em y) */
+const FRAG = { s: 4.2, x: 1040, y: 520 };
 
 export const S03_Nascimento: React.FC = () => {
   const frame = useCurrentFrame();
@@ -43,9 +45,9 @@ export const S03_Nascimento: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ background: COLORS.ameixa, overflow: "hidden" }}>
-      {/* fragmento: orelha direita do símbolo, gigante, cortada pela tela */}
-      <div style={{ position: "absolute", left: 820 - 290 * 7, top: 250 - 60 * 7 }}>
-        <DogSymbol width={350 * 7} color={COLORS.creme} parts={{ head: prog(frame, 0, 58, "inOut") }} />
+      {/* fragmento: só o contorno da cabeça do símbolo, em escala grande, cortado pela tela */}
+      <div style={{ position: "absolute", left: FRAG.x - 330 * FRAG.s, top: FRAG.y - 44 * FRAG.s }}>
+        <DogSymbol width={350 * FRAG.s} color={COLORS.creme} parts={{ head: prog(frame, 0, 58, "inOut") }} />
       </div>
 
       <Label text={TEXT.s3.label} start={4} color={COLORS.creme} size={22} style={{ left: M, top: 190 }} />

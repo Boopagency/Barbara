@@ -40,7 +40,7 @@ export const S07_Universo: React.FC = () => {
         {it.kind === "symbol" && <DogSymbol width={520} color={fg} />}
         {it.kind === "wordmark" && <Wordmark width={640} color={fg} />}
         {it.kind === "tagline" && (
-          <div style={{ ...sansStyle, color: fg, fontSize: 30, letterSpacing: "0.3em", marginRight: "-0.3em" }}>
+          <div style={{ ...sansStyle, color: fg, fontSize: 38, letterSpacing: "0.3em", marginRight: "-0.3em" }}>
             {TEXT.s7.tagline}
           </div>
         )}

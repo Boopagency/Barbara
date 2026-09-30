@@ -14,16 +14,17 @@ const font = path.join(root, "public/fonts/Montserrat-Variable.ttf");
 
 // Frames revisados (frame absoluto @30fps → rótulo). Mantenha em sincronia com config/film.ts.
 const FRAMES = [
-  [16, "S01 abertura"], [44, "S01 frase"], [100, "S01 nome"],
-  [140, "S02 cuidar de perto"], [176, "S02 cada história"], [214, "S02 confiança"], [238, "S02 push ameixa"],
-  [258, "S03 ameixa"], [296, "S03 ponto→forma"], [320, "S03 tipografia"], [350, "S03 creme"],
-  [370, "S04 orelha"], [392, "S04 olho/focinho"], [416, "S04 língua"], [470, "S04 símbolo"],
-  [476, "S05 relevo (match)"], [510, "S05 caderno"], [524, "S05 capa abre"], [552, "S05 logo"],
-  [584, "S05 paleta"], [604, "S05 tipografia"], [636, "S05 hero"],
-  [672, "S06 cartão (match)"], [700, "S06 cartões"], [722, "S06 jaleco (match)"], [752, "S06 jaleco"],
-  [770, "S06 embalagem (match)"], [800, "S06 embalagem"], [820, "S06 sai → digital"], [860, "S06 digital"],
-  [832, "S07 1"], [870, "S07 2"], [896, "S07 3"], [918, "S07 4"],
-  [944, "S08 símbolo"], [980, "S08 wordmark"], [1043, "S08 end frame"],
+  // S01 0–119 · S02 120–245 · S03 246–353 · S04 354–473 · S05 474–629 · S06 630–827 · S07 828–923 · S08 924–1043
+  [18, "S01 abertura"], [50, "S01 frase"], [100, "S01 nome"],
+  [150, "S02 cuidar de perto"], [184, "S02 cada história"], [214, "S02 confiança"], [236, "S02 push ameixa"],
+  [270, "S03 ameixa"], [300, "S03 ponto→forma"], [320, "S03 tipografia"], [352, "S03 creme"],
+  [378, "S04 orelha"], [392, "S04 olho/focinho"], [418, "S04 língua"], [470, "S04 símbolo"],
+  [474, "S05 relevo (match)"], [500, "S05 caderno"], [522, "S05 capa abre"], [540, "S05 logo"],
+  [574, "S05 paleta"], [594, "S05 tipografia"], [612, "S05 hero"], [629, "S05 push caixa"],
+  [630, "S06 cartão (match)"], [660, "S06 cartões"], [678, "S06 jaleco (match)"], [704, "S06 jaleco"],
+  [726, "S06 embalagem (match)"], [752, "S06 embalagem"], [772, "S06 sai → digital"], [810, "S06 digital"],
+  [832, "S07 Bárbara"], [842, "S07 símbolo"], [872, "S07 tagline"], [890, "S07 wordmark"], [900, "S07 Bárbara trabalhando"],
+  [946, "S08 símbolo"], [990, "S08 wordmark"], [1043, "S08 end frame"],
 ].sort((a, b) => a[0] - b[0]);
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "cs-"));
