@@ -111,6 +111,67 @@ function seg(p, L, win, prog, rev) {
 }
 const rotAbout = (r, [px, py]) => `rotate(${r.toFixed(3)} ${px} ${py})`;
 
+/* ---------- soft deformation: parts bend from a glued base instead of rotating as rigid pieces ---------- */
+function parsePath(d) {
+  // our paths are "M x,y C x,y x,y x,y ..." (absolute cubics)
+  const nums = d.match(/-?\d+(\.\d+)?/g).map(Number);
+  const pts = [];
+  for (let i = 0; i < nums.length; i += 2) pts.push([nums[i], nums[i + 1]]);
+  // arc fraction of each point (control points take their segment's interpolated fraction)
+  const on = [0];
+  for (let k = 3; k < pts.length; k += 3) on.push(k);
+  const cum = [0];
+  for (let j = 1; j < on.length; j++) {
+    const [a, b] = [pts[on[j - 1]], pts[on[j]]];
+    cum.push(cum[j - 1] + Math.hypot(b[0] - a[0], b[1] - a[1]));
+  }
+  const tot = cum[cum.length - 1];
+  const frac = pts.map((_, i) => {
+    const seg = Math.floor(Math.max(0, i - 1) / 3), within = i === 0 ? 0 : ((i - 1) % 3 + 1) / 3;
+    const c0 = cum[Math.min(seg, cum.length - 1)], c1 = cum[Math.min(seg + 1, cum.length - 1)];
+    return (c0 + (c1 - c0) * within) / tot;
+  });
+  return { pts, frac };
+}
+function writePath(pts) {
+  let d = `M${pts[0][0].toFixed(2)},${pts[0][1].toFixed(2)}`;
+  for (let i = 1; i < pts.length; i += 3)
+    d += ` C${pts[i][0].toFixed(2)},${pts[i][1].toFixed(2)} ${pts[i + 1][0].toFixed(2)},${pts[i + 1][1].toFixed(2)} ${pts[i + 2][0].toFixed(2)},${pts[i + 2][1].toFixed(2)}`;
+  return d;
+}
+const smooth01 = (a, b, x) => { const k = clamp((x - a) / (b - a)); return k * k * (3 - 2 * k); };
+function bendPt(p, piv, deg) {
+  if (Math.abs(deg) < 1e-4) return p;
+  const r = deg * Math.PI / 180, c = Math.cos(r), s = Math.sin(r);
+  const x = p[0] - piv[0], y = p[1] - piv[1];
+  return [piv[0] + x * c - y * s, piv[1] + x * s + y * c];
+}
+const GEO = { head: parsePath(S.head), tongue: parsePath(S.tongue), tline: parsePath(S.tline), jaw: parsePath(S.jaw) };
+const JAW_ROOT = [238, 307];
+// tongue weight: 0 at the mouth, 1 at the tip -> the tongue bends, its root stays glued to the smile
+const tongueW = p => smooth01(266, 350, p[1]);
+function tongueAngle(p, deg) { const w = tongueW(p); return deg * w * (1 + 0.35 * w * (1 - Math.min(1, Math.abs(deg) / 30))); }
+function deformTongue(deg) {
+  const f = pts => pts.map(p => bendPt(p, PIV.tongue, tongueAngle(p, deg)));
+  // the jaw line starts on the tongue's right edge: its first part follows the tongue, then fades out
+  const jaw = GEO.jaw.pts.map(p => {
+    const fall = 1 - smooth01(0, 70, Math.hypot(p[0] - JAW_ROOT[0], p[1] - JAW_ROOT[1]));
+    return bendPt(p, PIV.tongue, tongueAngle(JAW_ROOT, deg) * fall);
+  });
+  return { tongue: writePath(f(GEO.tongue.pts)), tline: writePath(f(GEO.tline.pts)), jaw: writePath(jaw) };
+}
+// ears: a soft hinge — no motion at the joint with the head, full motion a short way down the ear
+const EAR_JOINT = { earL: 0.462, earR: 0.615 };
+function deformHead(degL, degR, HINGE = 0.2) {
+  const { pts, frac } = GEO.head;
+  return writePath(pts.map((p, i) => {
+    const f = frac[i];
+    if (f < EAR_JOINT.earL && degL) return bendPt(p, PIV.earL, degL * smooth01(0, HINGE, EAR_JOINT.earL - f));
+    if (f > EAR_JOINT.earR && degR) return bendPt(p, PIV.earR, degR * smooth01(0, HINGE, f - EAR_JOINT.earR));
+    return p;
+  }));
+}
+
 class Dog {
   constructor(parent) {
     this.g = el('g', {}, parent);
@@ -137,7 +198,7 @@ class Dog {
     const d = Object.assign({
       color: PL, top: 1, earL: 1, earR: 1, mouth: 1, jaw: 1, tongue: 1, tline: 1,
       earLRot: 0, earRRot: 0, tongueRot: 0, noseS: 1, noseSY: 1, noseY: 0, nose: 1,
-      stem: undefined, eyeL: 1, eyeR: 1, blinkL: 0, blinkR: 0, wink: 0, lookX: 0, lookY: 0, eyeLS: 1, eyeRS: 1, sw: SW,
+      stem: undefined, hinge: 0.2, eyeL: 1, eyeR: 1, blinkL: 0, blinkR: 0, wink: 0, lookX: 0, lookY: 0, eyeLS: 1, eyeRS: 1, sw: SW,
     }, o);
     for (const p of this.strokes) { p.setAttribute('stroke', d.color); p.setAttribute('stroke-width', d.sw); }
     this.nose.setAttribute('fill', d.color);
@@ -150,9 +211,19 @@ class Dog {
     seg(this.jaw, LEN.jaw, [0, 1], d.jaw, false);
     seg(this.tongue, LEN.tongue, [0, 1], d.tongue, false);
     seg(this.tline, LEN.tline, [0, 1], d.tline, false);
-    this.earLG.setAttribute('transform', rotAbout(d.earLRot, PIV.earL));
-    this.earRG.setAttribute('transform', rotAbout(d.earRRot, PIV.earR));
-    this.tongueG.setAttribute('transform', rotAbout(d.tongueRot, PIV.tongue));
+    // bend instead of rotate, so every joint stays one continuous line
+    const earKey = `${d.earLRot.toFixed(3)}|${d.earRRot.toFixed(3)}|${d.hinge}`;
+    if (earKey !== this._earKey) {
+      this._earKey = earKey;
+      const hd = (Math.abs(d.earLRot) < 1e-3 && Math.abs(d.earRRot) < 1e-3) ? S.head : deformHead(d.earLRot, d.earRRot, d.hinge);
+      for (const pth of [this.earL, this.top, this.earR]) pth.setAttribute('d', hd);
+    }
+    const tKey = d.tongueRot.toFixed(3);
+    if (tKey !== this._tKey) {
+      this._tKey = tKey;
+      const tg = Math.abs(d.tongueRot) < 1e-3 ? { tongue: S.tongue, tline: S.tline, jaw: S.jaw } : deformTongue(d.tongueRot);
+      this.tongue.setAttribute('d', tg.tongue); this.tline.setAttribute('d', tg.tline); this.jaw.setAttribute('d', tg.jaw);
+    }
     const [nx, ny] = PIV.nose;
     this.noseG.setAttribute('transform', `translate(${nx},${(ny + d.noseY).toFixed(2)}) scale(${d.noseS.toFixed(4)},${(d.noseS * d.noseSY).toFixed(4)}) translate(${-nx},${-ny})`);
     this.noseG.setAttribute('visibility', d.nose > 0 ? 'visible' : 'hidden');
@@ -342,7 +413,7 @@ scene(4.0, 5.5, (root) => {
   const s = 5.6;
   dog.place(670 - (345 - 227) * s, 420 - (150 - 227) * s, s);
   const rot = 62 * (1 - spring(t - 4.0, 15, 0.3)) + 6 * wobble(t - 4.75, 24, 0.22) + 5 * wobble(t - 5.25, 24, 0.22);
-  dog.set(ONLY(['earR'], { color: CR, earRRot: rot }));
+  dog.set(ONLY(['earR'], { color: CR, earRRot: rot, hinge: 0.004 }));
   for (let i = 0; i < w.n; i++) {
     const ta = 4.03 + i * 0.035;
     if (t < ta) { w.L(i, { op: 0 }); continue; }

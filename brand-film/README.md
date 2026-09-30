@@ -57,6 +57,10 @@ num tempo diferente.
   Montserrat para "MÉDICA VETERINÁRIA", como no lockup.
 - Não há fotografia, pessoa, clínica, pata, osso, coração ou cruz. Tudo é feito com
   os elementos da identidade.
+- **Articulação macia:** língua e orelhas não giram como peças duras. Elas se
+  deformam a partir de uma base colada: a raiz da língua fica presa no sorriso e na
+  linha do queixo, e a orelha curva a partir da junção com a cabeça. Assim o símbolo
+  continua sendo uma linha só em qualquer quadro.
 - Motion blur real por supersampling temporal nos movimentos rápidos e grão sutil
   para não criar banding na compressão do Instagram.
 

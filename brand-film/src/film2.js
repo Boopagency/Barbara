@@ -231,8 +231,8 @@ scene(17.5, 27.01, (root) => {
   const fx = 540 + (cx - 540) * zc, fy = 900 + (cy - 900) * zc;
   dog.place(fx, fy, s * (winked ? cz : zc));
 
-  const earL = 75 * (1 - spring(t - 17.9, 16, 0.32));
-  const earR = -75 * (1 - spring(t - 18.0, 16, 0.32));
+  const earL = 50 * (1 - spring(t - 17.9, 16, 0.32));
+  const earR = -50 * (1 - spring(t - 18.0, 16, 0.32));
   let noseY = -150 * (1 - spring(t - 18.45, 17, 0.5)), noseS = lerp(2.3, 1, spring(t - 18.45, 17, 0.5));
   let noseSY = 1;
   for (const ts of [18.85, 18.95]) { const p = pulse(t - ts, 0.08); noseSY -= 0.07 * p; noseY -= 2 * p; }
