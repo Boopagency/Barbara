@@ -1,6 +1,9 @@
 # Apresentação de entrega — Bárbara Fonseca
 
 Deck: https://claude.ai/artifact/4nMntRNMWpMMBGcAc9XNnq (23 slides, 16:9)
+PDF: `Barbara_Fonseca_Entrega_de_Marca.pdf`
+
+Tipografia da apresentação: Young Serif (títulos), Brygada 1918 (textos) e Montserrat (rótulos, a mesma do "Médica Veterinária" do logotipo). Todas no Google Fonts, licença OFL.
 
 ## Narrativa
 
