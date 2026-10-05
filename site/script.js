@@ -5,8 +5,8 @@
 
 const CONFIG = {
   // TODO: trocar pelos dados reais antes de publicar
-  whatsapp: "5541900000000",            // só números, com DDI + DDD
-  phoneDisplay: "(41) 9 0000-0000",
+  whatsapp: "554187269000",             // só números, com DDI + DDD
+  phoneDisplay: "(41) 8726-9000",
   email: "contato@barbarafonseca.vet.br",
   instagram: "https://instagram.com/",
   address: "Rua Exemplo, 123 · Curitiba/PR",

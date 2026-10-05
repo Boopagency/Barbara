@@ -5,7 +5,7 @@ Site estático (HTML + CSS + JS puro, sem build). Para publicar, suba a pasta `s
 ## Antes de publicar
 Edite o objeto `CONFIG` no topo de `script.js`:
 
-- `whatsapp`, `phoneDisplay`, `email`, `instagram`, `address`, `crmv`: dados reais
+- `email`, `instagram`, `address`, `crmv`: dados reais
 - `schedule`: horários de atendimento por dia da semana
 - `blocked`: feriados ou horários já ocupados (`"2026-12-25"` ou `"2026-10-08 14:00"`)
 
