@@ -57,7 +57,15 @@ const store = {
   get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* sem storage */ } },
 };
-const waLink = (text) => `https://wa.me/${CONFIG.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+/* Origem (UTM) vai no fim de toda mensagem do WhatsApp — mesma regra de links.html */
+const UTM = Object.fromEntries([...new URLSearchParams(location.search)].filter(([k]) => k.startsWith("utm_")));
+const origem = UTM.utm_source || UTM.utm_medium
+  ? `Origem: ${/paid|cpc|ppc|^ads?$|anuncio/i.test(UTM.utm_medium || "") ? "anúncio" : "orgânico"} · ${[UTM.utm_source, UTM.utm_medium, UTM.utm_campaign].filter(Boolean).join(" · ")}`
+  : "";
+const waLink = (text) => {
+  const t = [text, origem].filter(Boolean).join("\n\n");
+  return `https://wa.me/${CONFIG.whatsapp}${t ? `?text=${encodeURIComponent(t)}` : ""}`;
+};
 
 /* ---------- agenda ---------- */
 function slotsFor(dateIso) {
@@ -418,4 +426,6 @@ window.addEventListener("resize", updateArrows);
 bindConfig();
 renderSlots();
 updateArrows();
-if (location.hash === "#agendar") Booking.open();
+// #agendar abre o agendamento; #agendar-vacina já abre com o serviço (usado em /links)
+const deepLink = location.hash.match(/^#agendar(?:-(\w+))?$/);
+if (deepLink) Booking.open({ service: SERVICES.some((s) => s.id === deepLink[1]) ? deepLink[1] : null });
