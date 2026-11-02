@@ -11,7 +11,7 @@ const CONFIG = {
   instagram: "https://instagram.com/",
   address: "Rua Exemplo, 123 · Curitiba/PR",
   addressShort: "Curitiba · PR",
-  hoursShort: "Seg–Sáb, com hora marcada",
+  hoursShort: "Seg a sáb, com hora marcada",
   hoursLong: "Seg a sex · 8h às 18h  ·  Sáb · 8h às 12h",
   crmv: "CRMV-PR 00000",
 
@@ -398,24 +398,7 @@ const io = new IntersectionObserver((entries) => {
 }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
 $$(".reveal").forEach((el) => io.observe(el));
 
-/* ---------- depoimentos ---------- */
-const track = $("[data-reviews-track]");
-const arrows = $$("[data-reviews]");
-function updateArrows() {
-  const max = track.scrollWidth - track.clientWidth - 2;
-  arrows[0].disabled = track.scrollLeft <= 2;
-  arrows[1].disabled = track.scrollLeft >= max;
-}
-arrows.forEach((b) => b.addEventListener("click", () => {
-  const card = track.firstElementChild;
-  const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-  track.scrollBy({ left: (+b.dataset.reviews) * (card.offsetWidth + gap), behavior: "smooth" });
-}));
-track.addEventListener("scroll", updateArrows, { passive: true });
-window.addEventListener("resize", updateArrows);
-
 /* ---------- init ---------- */
 bindConfig();
 renderSlots();
-updateArrows();
 if (location.hash === "#agendar") Booking.open();
