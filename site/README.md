@@ -19,19 +19,21 @@ Fluxo: serviço → dia/horário → dados do pet e do tutor → resumo → abre
 A lista de serviços fica em `SERVICES`, no `script.js`.
 
 ## Link na bio (`/links`)
-Página `links.html`, servida em `/links`. Vídeo + "Quero agendar / Quero conhecer" + "O que eu resolvo".
+Página `links.html`, servida em `/links`. Vídeo, o que a Bárbara faz e dois botões: **Quero agendar** e **Quero conhecer**.
+Os dois abrem o WhatsApp com a mensagem pronta. A página não leva para o site, para não perder a origem.
 
 - **Vídeo:** suba em `assets/video/barbara.mp4` (vertical 9:16, H.264, até ~8 MB). Sem o arquivo aparece a foto e o botão de som some.
 - **Bio do Instagram (orgânico):** `https://DOMINIO/links?utm_source=instagram&utm_medium=bio`
 - **Anúncios:** `https://DOMINIO/links?utm_source=instagram&utm_medium=paid&utm_campaign=NOME`
-  (no Meta Ads dá para usar `utm_campaign={{campaign.name}}&utm_content={{ad.name}}`)
+  (no Meta Ads dá para usar `utm_campaign={{campaign.name}}`)
 - **Stories (orgânico):** `utm_medium=stories`
-- `&aba=conhecer` abre a página já na aba "Quero conhecer".
 
 Regra: `utm_medium` = `paid`, `cpc`, `ppc`, `ads` ou `anuncio` conta como anúncio; o resto é orgânico. Sem UTM, `/links` conta como bio.
-As UTMs seguem para o site e toda mensagem de WhatsApp (da página e do agendamento) termina com, por exemplo,
-`Origem: anúncio · instagram · paid · vacina-nov`, assim a Bárbara sabe de onde veio cada contato.
-`/#agendar-vacina` (ou `consulta`, `checkup`, `domiciliar`, `filhote`, `senior`, `retorno`) abre o agendamento já com o serviço.
+Mensagem que chega para a Bárbara (exemplo de anúncio):
+
+    Olá, Bárbara! Vi seu anúncio e quero agendar um atendimento para o meu pet.
+
+    Origem: anúncio · instagram · paid · vacina-nov
 
 ## Estrutura
 - `index.html`: página + logotipo vetorizado embutido

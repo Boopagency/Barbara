@@ -22,13 +22,13 @@
     .lb { display: grid; min-height: 100svh; }
 
     /* vídeo */
-    .lb__media { position: relative; overflow: hidden; height: min(68svh, 640px); background: var(--ameixa-700); }
+    .lb__media { position: relative; overflow: hidden; height: min(62svh, 600px); background: var(--ameixa-700); }
     .lb__media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
     .lb__media::after {
       content: ""; position: absolute; inset: 0; pointer-events: none;
       background: linear-gradient(to bottom, rgba(59, 30, 40, .25), transparent 22%, transparent 48%, var(--ameixa-ink));
     }
-    .lb__sign { position: absolute; z-index: 1; left: var(--gutter); bottom: 18px; width: min(210px, 56%); aspect-ratio: 2616 / 1425; color: var(--creme); }
+    .lb__sign { position: absolute; z-index: 1; left: var(--gutter); bottom: 18px; width: min(200px, 54%); aspect-ratio: 2616 / 1425; color: var(--creme); }
     .lb__sound {
       position: absolute; z-index: 2; top: 16px; right: 16px;
       display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px;
@@ -43,51 +43,24 @@
     .lb__sound svg { width: 18px; height: 18px; }
 
     /* conteúdo */
-    .lb__main { width: min(500px, 100% - var(--gutter) * 2); margin: 0 auto; padding: 6px 0 calc(28px + env(safe-area-inset-bottom)); }
+    .lb__main { display: flex; flex-direction: column; width: min(460px, 100% - var(--gutter) * 2); margin: 0 auto; padding: 6px 0 calc(24px + env(safe-area-inset-bottom)); }
     .lb__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid rgba(247, 240, 228, .14); }
     .lb__top p { font: 600 14px/1.3 var(--display); }
     .lb__top svg { width: 34px; height: 36px; }
 
-    .lb__facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 22px 0 24px; }
-    .lb__facts strong { display: block; font: 600 clamp(19px, 5.4vw, 26px)/1.05 var(--display); letter-spacing: -.02em; }
-    .lb__facts span { display: block; margin-top: 6px; font-size: 13px; line-height: 1.3; }
+    .lb__title { margin-top: 26px; font: 600 clamp(32px, 8.6vw, 44px)/1.05 var(--display); letter-spacing: -.035em; }
+    .lb__title .tag { font-size: 1.04em; margin-bottom: .1em; }
+    .lb__lead { margin-top: 14px; font-size: 16px; }
 
-    .lb .seg { padding: 5px; border-radius: 999px; background: rgba(247, 240, 228, .07); box-shadow: inset 0 0 0 1px rgba(247, 240, 228, .14); }
-    .lb .seg span { min-height: 46px; border-radius: 999px; color: var(--creme); font-size: 15px; }
-    .lb .seg input:checked + span { background: var(--creme); color: var(--ameixa-ink); }
-    .lb .seg input:focus-visible + span { outline-color: var(--salvia); }
+    .lb__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .lb__tags li { padding: 7px 12px; border-radius: 999px; box-shadow: inset 0 0 0 1px rgba(247, 240, 228, .22); font-size: 13px; font-weight: 500; }
 
-    .lb__panel { padding-top: 28px; animation: stepIn .4s var(--ease); }
-    .lb__panel h2 { font: 600 clamp(34px, 9vw, 46px)/1.05 var(--display); letter-spacing: -.035em; }
-    .lb__panel p { margin-top: 16px; max-width: 42ch; font-size: 16px; }
-    .lb__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 26px; }
-    .link-wa .down { transform: rotate(90deg); }
+    .lb__ctas { display: grid; gap: 10px; margin-top: 28px; }
+    .btn--line { --bg: transparent; --fg: var(--creme); box-shadow: inset 0 0 0 1.5px rgba(247, 240, 228, .4); }
+    .btn--line:hover { box-shadow: inset 0 0 0 1.5px var(--creme); }
+    .lb__note { margin-top: 12px; text-align: center; font-size: 13px; }
 
-    .lb__sec { margin-top: 56px; }
-    .lb__h { padding-bottom: 16px; border-bottom: 1px solid rgba(247, 240, 228, .14); font: 700 15px/1 var(--display); letter-spacing: .08em; text-transform: uppercase; }
-    .lb__list { display: grid; gap: 10px; margin-top: 16px; }
-    .lb__list a {
-      display: grid; grid-template-columns: 44px 1fr 20px; align-items: center; gap: 14px;
-      padding: 14px 16px 14px 14px; border-radius: var(--r-lg);
-      background: rgba(247, 240, 228, .06); box-shadow: inset 0 0 0 1px rgba(247, 240, 228, .1);
-      text-decoration: none; transition: background-color .25s, transform .25s var(--ease);
-    }
-    .lb__list a:hover { background: rgba(247, 240, 228, .11); transform: translateY(-1px); }
-    .lb__ico { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: var(--salvia); color: var(--ameixa-ink); }
-    .lb__list li:nth-child(even) .lb__ico { background: var(--creme); color: var(--ameixa); }
-    .lb__ico svg { width: 22px; height: 22px; }
-    .lb__list strong { display: block; font: 600 16px/1.2 var(--display); }
-    .lb__list small { display: block; margin-top: 3px; font-size: 14px; line-height: 1.35; }
-    .lb__go { width: 20px; height: 20px; color: var(--salvia); transition: transform .3s var(--ease); }
-    .lb__list a:hover .lb__go { transform: translateX(3px); }
-
-    .lb__end { margin-top: 56px; padding: 26px; border-radius: var(--r-xl); background: var(--salvia-200); color: var(--ameixa-ink); }
-    .lb__end h2 { font: 600 clamp(26px, 7vw, 34px)/1.08 var(--display); letter-spacing: -.03em; }
-    .lb__end p { margin: 10px 0 20px; color: var(--salvia-700); }
-
-    .lb__foot { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 40px; padding-top: 18px; border-top: 1px solid rgba(247, 240, 228, .14); font-size: 13px; }
-    .lb__foot a { text-decoration: none; }
-    .lb__foot a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .lb__foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; margin-top: 36px; padding-top: 16px; border-top: 1px solid rgba(247, 240, 228, .14); font-size: 13px; }
 
     @media (min-width: 900px) {
       .lb { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
@@ -95,11 +68,7 @@
       .lb__media::after { background: linear-gradient(to right, transparent 60%, var(--ameixa-ink)), linear-gradient(to bottom, transparent 62%, var(--ameixa-ink)); }
       .lb__sign { left: clamp(28px, 4vw, 56px); bottom: clamp(28px, 4vw, 56px); width: min(300px, 50%); }
       .lb__sound { top: 24px; right: 24px; }
-      .lb__main { padding-top: 56px; }
-    }
-    @media (max-width: 380px) {
-      .lb__facts { grid-template-columns: 1fr 1fr; }
-      .lb__actions .btn { width: 100%; }
+      .lb__main { justify-content: center; min-height: 100svh; padding: 48px 0; }
     }
   </style>
 </head>
@@ -151,65 +120,32 @@
   </aside>
 
   <main class="lb__main">
-    <h1 class="sr">Bárbara Fonseca, médica veterinária em Curitiba</h1>
-
     <header class="lb__top">
-      <p>Cuidado veterinário sem pressa</p>
+      <p>Cães e gatos · Curitiba</p>
       <svg aria-hidden="true"><use href="#dog"/></svg>
     </header>
 
-    <ul class="lb__facts">
-      <li><strong>Cães e gatos</strong><span class="soft">de todas as idades</span></li>
-      <li><strong>Em casa</strong><span class="soft">ou no consultório</span></li>
-      <li><strong>Curitiba</strong><span class="soft">Paraná, Brasil</span></li>
+    <h1 class="lb__title">Sua <span class="tag">veterinária<svg aria-hidden="true"><use href="#dog"/></svg></span> para todas as fases da vida.</h1>
+    <p class="lb__lead soft">Consulta sem pressa, explicação sem jargão e um plano de cuidado que cabe na sua rotina, no consultório ou na sua casa.</p>
+
+    <ul class="lb__tags soft" aria-label="Atendimentos">
+      <li>Consultas</li>
+      <li>Vacinas e vermífugo</li>
+      <li>Check-up</li>
+      <li>Filhotes</li>
+      <li>Pets idosos</li>
+      <li>Atendimento em casa</li>
     </ul>
 
-    <fieldset class="seg lb__switch" data-switch>
-      <legend class="sr">O que você procura?</legend>
-      <label><input type="radio" name="aba" value="agendar" id="aba-agendar" autocomplete="off" checked><span>Quero agendar</span></label>
-      <label><input type="radio" name="aba" value="conhecer" id="aba-conhecer" autocomplete="off"><span>Quero conhecer</span></label>
-    </fieldset>
-
-    <section class="lb__panel" data-panel="agendar" aria-labelledby="p-agendar">
-      <h2 id="p-agendar">Vamos marcar o próximo <span class="tag">cuidado?</span></h2>
-      <p class="soft">Escolha o atendimento, o dia e o horário em menos de um minuto. Eu confirmo com você pelo WhatsApp.</p>
-      <div class="lb__actions">
-        <a class="btn btn--cream btn--lg" href="/#agendar" data-site>Agendar consulta <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a class="link-wa" href="#" target="_blank" rel="noopener" data-wa="Olá, Bárbara! Quero agendar uma consulta para o meu pet."><svg aria-hidden="true"><use href="#i-chat"/></svg>Prefiro o WhatsApp</a>
-      </div>
-    </section>
-
-    <section class="lb__panel" data-panel="conhecer" aria-labelledby="p-conhecer" hidden>
-      <h2 id="p-conhecer">Consulta boa é consulta <span class="tag">sem pressa.</span></h2>
-      <p class="soft">Eu sou a Bárbara, médica veterinária de cães e gatos. Atendo no consultório ou na sua casa, com escuta, ciência e carinho de verdade, e sem exame desnecessário.</p>
-      <div class="lb__actions">
-        <a class="btn btn--cream btn--lg" href="/" data-site>Conhecer o site <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a class="link-wa" href="#resolvo"><svg class="down" aria-hidden="true"><use href="#i-arrow"/></svg>O que eu resolvo</a>
-      </div>
-    </section>
-
-    <section class="lb__sec" id="resolvo" aria-labelledby="h-resolvo">
-      <h2 class="lb__h" id="h-resolvo">O que eu resolvo</h2>
-      <ul class="lb__list">
-        <li><a href="/#agendar-consulta" data-site><span class="lb__ico"><svg aria-hidden="true"><use href="#i-paw"/></svg></span><span><strong>Seu pet está diferente</strong><small class="soft">Coceira, vômito, apatia ou falta de apetite: consulta clínica com tempo para investigar.</small></span><svg class="lb__go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        <li><a href="/#agendar-vacina" data-site><span class="lb__ico"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><span><strong>Vacina e vermífugo em dia</strong><small class="soft">Calendário certo para a idade e a rotina do seu pet.</small></span><svg class="lb__go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        <li><a href="/#agendar-domiciliar" data-site><span class="lb__ico"><svg aria-hidden="true"><use href="#i-house"/></svg></span><span><strong>Medo de clínica</strong><small class="soft">Atendimento na sua casa, sem o estresse do transporte.</small></span><svg class="lb__go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        <li><a href="/#agendar-filhote" data-site><span class="lb__ico"><svg aria-hidden="true"><use href="#i-star"/></svg></span><span><strong>Filhote novo em casa</strong><small class="soft">Primeira consulta com tudo o que você precisa saber.</small></span><svg class="lb__go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        <li><a href="/#agendar-senior" data-site><span class="lb__ico"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><span><strong>Pet na melhor idade</strong><small class="soft">Check-up a partir dos 7 anos para envelhecer bem.</small></span><svg class="lb__go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        <li><a href="/#agendar-checkup" data-site><span class="lb__ico"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><span><strong>Prevenção</strong><small class="soft">Check-up com exames orientados, sem exagero e sem susto na conta.</small></span><svg class="lb__go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-      </ul>
-    </section>
-
-    <section class="lb__end" aria-labelledby="h-duvida">
-      <h2 id="h-duvida">Ficou com alguma dúvida?</h2>
-      <p>Me chama no WhatsApp. Eu respondo com calma.</p>
-      <a class="btn btn--plum btn--lg btn--block" href="#" target="_blank" rel="noopener" data-wa="Olá, Bárbara! Tenho uma dúvida sobre o meu pet."><svg aria-hidden="true"><use href="#i-chat"/></svg>Falar com a Bárbara</a>
-    </section>
+    <div class="lb__ctas">
+      <a class="btn btn--cream btn--lg" href="#" target="_blank" rel="noopener" data-wa="quero agendar um atendimento para o meu pet"><svg aria-hidden="true"><use href="#i-chat"/></svg>Quero agendar</a>
+      <a class="btn btn--line btn--lg" href="#" target="_blank" rel="noopener" data-wa="quero conhecer melhor o seu trabalho"><svg aria-hidden="true"><use href="#i-chat"/></svg>Quero conhecer</a>
+    </div>
+    <p class="lb__note soft">Os dois abrem o WhatsApp com a mensagem pronta.</p>
 
     <footer class="lb__foot soft">
-      <a href="/" data-site>Site completo</a>
       <span>Curitiba · PR</span>
-      <span>© <span data-year>2026</span> Bárbara Fonseca</span>
+      <span>© <span data-year>2026</span> Bárbara Fonseca · Médica Veterinária</span>
     </footer>
   </main>
 </div>
@@ -221,29 +157,16 @@
   /* ---------- UTMs ----------
      Orgânico (bio):  /links?utm_source=instagram&utm_medium=bio
      Anúncio:         /links?utm_source=instagram&utm_medium=paid&utm_campaign=NOME
-     Sem UTM conta como bio. As UTMs seguem para o site e entram na mensagem do WhatsApp. */
-  const q = new URLSearchParams(location.search);
-  const utm = Object.fromEntries([...q].filter(([k]) => k.startsWith("utm_")));
+     Sem UTM conta como bio. Tudo sai daqui direto para o WhatsApp, com a origem na mensagem. */
+  const utm = Object.fromEntries([...new URLSearchParams(location.search)].filter(([k]) => k.startsWith("utm_")));
   if (!utm.utm_source && !utm.utm_medium) Object.assign(utm, { utm_source: "instagram", utm_medium: "bio" });
-
-  // mesma regra de origem em script.js
   const paid = /paid|cpc|ppc|^ads?$|anuncio/i.test(utm.utm_medium || "");
   const origem = `Origem: ${paid ? "anúncio" : "orgânico"} · ${[utm.utm_source, utm.utm_medium, utm.utm_campaign].filter(Boolean).join(" · ")}`;
 
-  document.querySelectorAll("[data-site]").forEach((a) => {
-    const url = new URL(a.getAttribute("href"), location.href);
-    Object.entries(utm).forEach(([k, v]) => url.searchParams.set(k, v));
-    a.href = url;
-  });
   document.querySelectorAll("[data-wa]").forEach((a) => {
-    a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`${a.dataset.wa}\n\n${origem}`)}`;
+    const text = `Olá, Bárbara! ${paid ? "Vi seu anúncio" : "Vim pelo seu Instagram"} e ${a.dataset.wa}.\n\n${origem}`;
+    a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
   });
-
-  /* ---------- agendar / conhecer (?aba=conhecer abre direto) ---------- */
-  const panels = document.querySelectorAll("[data-panel]");
-  const show = (v) => panels.forEach((p) => { p.hidden = p.dataset.panel !== v; });
-  document.querySelector("[data-switch]").addEventListener("change", (e) => show(e.target.value));
-  if (q.get("aba") === "conhecer") { document.getElementById("aba-conhecer").checked = true; show("conhecer"); }
 
   /* ---------- vídeo ---------- */
   const video = document.querySelector("[data-video]");
