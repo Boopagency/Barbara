@@ -12,7 +12,7 @@ Não há mais agenda online: todo botão de agendar abre um formulário curto e 
 - `lead.js` cria o formulário, a política de privacidade e o aviso de cookies nas duas páginas.
 - Qualquer elemento com `data-lead="agendar"` (ou `"conhecer"`) abre o formulário. `data-servico="Vacina e vermífugo"` já marca o que a pessoa precisa. `/#agendar` abre o formulário direto.
 - Perguntas: nome, WhatsApp, o que precisa, bairro, para quando e aceite de privacidade (LGPD).
-- Ao enviar, o lead vai para a planilha (aba **Site** ou **Bio**) e o WhatsApp abre com as respostas e a origem.
+- Ao enviar, o lead vai para a planilha (aba **Site** ou **Bio**, com a origem) e o WhatsApp abre só com as respostas.
 
 ### Planilha (Google Sheets)
 1. Crie uma planilha no Google Sheets > Extensões > Apps Script > cole `planilha-leads.gs` (na raiz do repositório) > salvar.
@@ -31,16 +31,14 @@ Site: https://www.barbarafonsecavet.com.br · Link na bio: https://bio.barbarafo
 - **Site pelo Perfil da Empresa no Google (Maps):** cadastre o site como `https://www.barbarafonsecavet.com.br/?utm_source=google&utm_medium=perfil-empresa`.
 - Site sem UTM e sem vir do Google conta como `direto`.
 
-Regra: `utm_medium` = `paid`, `cpc`, `ppc`, `ads` ou `anuncio` conta como anúncio; o resto é orgânico. Mensagem que chega para a Bárbara:
+Regra: `utm_medium` = `paid`, `cpc`, `ppc`, `ads` ou `anuncio` conta como anúncio; o resto é orgânico. A origem fica só na planilha. Mensagem que chega para a Bárbara:
 
-    Olá, Bárbara! Vi seu anúncio e quero agendar um atendimento para o meu pet.
+    Olá, Bárbara! Quero agendar um atendimento para o meu pet.
 
     • Nome: Ana
     • Preciso de: Vacina e vermífugo
     • Para quando: Esta semana
     • Bairro: Batel
-
-    Origem: site · anúncio (google · cpc · vacina-nov)
 
 ### Cookies
 Aviso na primeira visita, com a escolha guardada no navegador. Pixel da Meta ou GA4 só devem carregar com o aceite (`localStorage bf-cookies = "sim"`).
