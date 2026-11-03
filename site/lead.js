@@ -27,10 +27,18 @@
   };
 
   /* ---------- origem (UTM) ----------
-     Bio sem UTM conta como instagram/bio. Site sem UTM é acesso direto.
+     Sem UTM: bio = instagram/bio; site com gclid (Google Ads) = google/cpc;
+     site vindo da busca do Google = google/organico; o resto = direto.
      utm_medium paid, cpc, ppc, ads ou anuncio = anúncio; o resto é orgânico. */
-  const utm = Object.fromEntries([...new URLSearchParams(location.search)].filter(([k]) => k.startsWith("utm_")));
-  if (PAGINA === "bio" && !utm.utm_source && !utm.utm_medium) Object.assign(utm, { utm_source: "instagram", utm_medium: "bio" });
+  const q = new URLSearchParams(location.search);
+  const utm = Object.fromEntries([...q].filter(([k]) => k.startsWith("utm_")));
+  if (!utm.utm_source && !utm.utm_medium) {
+    Object.assign(utm,
+      PAGINA === "bio" ? { utm_source: "instagram", utm_medium: "bio" }
+      : q.has("gclid") ? { utm_source: "google", utm_medium: "cpc" }
+      : /^https?:\/\/(www\.)?google\./.test(document.referrer) ? { utm_source: "google", utm_medium: "organico" }
+      : { utm_source: "direto" });
+  }
   const paid = /paid|cpc|ppc|^ads?$|anuncio/i.test(utm.utm_medium || "");
   const tipo = paid ? "anúncio" : "orgânico";
   const detalhe = [utm.utm_source, utm.utm_medium, utm.utm_campaign].filter(Boolean).join(" · ");

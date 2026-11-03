@@ -22,10 +22,14 @@ Não há mais agenda online: todo botão de agendar abre um formulário curto e 
 As abas "Site" e "Bio" são criadas sozinhas no primeiro lead de cada uma.
 
 ### Origem (UTM)
-- Bio do Instagram (orgânico): `https://DOMINIO/links?utm_source=instagram&utm_medium=bio` (sem UTM, `/links` também conta como bio)
-- Anúncio no link da bio: `https://DOMINIO/links?utm_source=instagram&utm_medium=paid&utm_campaign=NOME` (no Meta Ads dá para usar `utm_campaign={{campaign.name}}`)
-- Anúncio no site: `https://DOMINIO/?utm_source=google&utm_medium=cpc&utm_campaign=NOME`
-- Site sem UTM conta como acesso direto (orgânico).
+Site: https://www.barbarafonsecavet.com.br · Link na bio: https://bio.barbarafonsecavet.com.br (abre `/links`, mantendo as UTMs)
+
+- **Bio do Instagram (orgânico):** `https://bio.barbarafonsecavet.com.br` (sem UTM já conta como instagram/bio)
+- **Anúncio no link da bio:** `https://bio.barbarafonsecavet.com.br/?utm_source=instagram&utm_medium=paid&utm_campaign=NOME` (no Meta Ads dá para usar `utm_campaign={{campaign.name}}`)
+- **Site pela busca do Google:** automático, sem UTM (detecta que a pessoa veio do Google).
+- **Site pelo Google Ads:** automático pelo `gclid` (auto-tagging ligado no Google Ads). Para ter o nome da campanha, use o modelo de acompanhamento `{lpurl}?utm_source=google&utm_medium=cpc&utm_campaign={campaignid}`.
+- **Site pelo Perfil da Empresa no Google (Maps):** cadastre o site como `https://www.barbarafonsecavet.com.br/?utm_source=google&utm_medium=perfil-empresa`.
+- Site sem UTM e sem vir do Google conta como `direto`.
 
 Regra: `utm_medium` = `paid`, `cpc`, `ppc`, `ads` ou `anuncio` conta como anúncio; o resto é orgânico. Mensagem que chega para a Bárbara:
 
@@ -41,9 +45,9 @@ Regra: `utm_medium` = `paid`, `cpc`, `ppc`, `ads` ou `anuncio` conta como anúnc
 ### Cookies
 Aviso na primeira visita, com a escolha guardada no navegador. Pixel da Meta ou GA4 só devem carregar com o aceite (`localStorage bf-cookies = "sim"`).
 
-## Link na bio (`/links`)
-Página `links.html`, servida em `/links`: vídeo, o que a Bárbara faz e os botões **Quero agendar** e **Quero conhecer**. Não leva para o site, para não perder a origem.
-Vídeo: suba em `assets/video/barbara.mp4` (vertical 9:16, H.264, até ~8 MB). Sem o arquivo aparece a selfie dela e o botão de som some.
+## Link na bio (`bio.barbarafonsecavet.com.br`)
+Página `links.html`, servida em `/links` e no subdomínio `bio.` (redirecionamento no `vercel.json`): vídeo, o que a Bárbara faz e os botões **Quero agendar** e **Quero conhecer**. Não leva para o site, para não perder a origem.
+Vídeo: suba em `assets/video/barbara.mp4` (vertical 9:16, H.264, até ~8 MB). Sem o arquivo aparece a foto dela de jaleco e o botão de som some.
 
 ## Estrutura
 - `index.html`: página + logotipo vetorizado embutido
