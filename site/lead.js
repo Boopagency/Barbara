@@ -5,8 +5,8 @@
    Qualquer elemento com data-lead abre o formulário:
      data-lead="agendar" | "conhecer"   (muda o título e a mensagem)
      data-servico="Vacina e vermífugo"  (já marca o que a pessoa precisa)
-   Ao enviar: grava na planilha (aba "Site" ou "Bio") e abre o WhatsApp
-   com as respostas e a origem. Também cria o aviso de cookies e a
+   Ao enviar: grava na planilha (aba "Site" ou "Bio", com a origem) e abre
+   o WhatsApp só com as respostas. Também cria o aviso de cookies e a
    política de privacidade (qualquer data-privacy abre).
    ========================================================== */
 (() => {
@@ -17,8 +17,8 @@
   const PAGINA = document.currentScript.dataset.pagina === "bio" ? "bio" : "site";
   const SERVICOS = ["Consulta", "Vacina e vermífugo", "Check-up", "Atendimento em casa", "Filhote", "Pet idoso", "Retorno", "Ainda não sei"];
   const INTENCAO = {
-    agendar: { titulo: "Vamos agendar", frase: "quero agendar um atendimento para o meu pet" },
-    conhecer: { titulo: "Vamos conversar", frase: "quero conhecer melhor o seu trabalho" },
+    agendar: { titulo: "Vamos agendar", frase: "Quero agendar um atendimento para o meu pet." },
+    conhecer: { titulo: "Vamos conversar", frase: "Quero conhecer melhor o seu trabalho." },
   };
   const $ = (s, el = document) => el.querySelector(s);
   const store = {
@@ -41,9 +41,6 @@
   }
   const paid = /paid|cpc|ppc|^ads?$|anuncio/i.test(utm.utm_medium || "");
   const tipo = paid ? "anúncio" : "orgânico";
-  const detalhe = [utm.utm_source, utm.utm_medium, utm.utm_campaign].filter(Boolean).join(" · ");
-  const origem = `Origem: ${PAGINA === "bio" ? "link da bio" : "site"} · ${tipo}${detalhe ? ` (${detalhe})` : ""}`;
-  const abertura = paid ? "Vi seu anúncio" : PAGINA === "bio" ? "Vim pelo seu Instagram" : "Vim pelo seu site";
 
   /* ---------- HTML (estilos do .book em styles.css) ---------- */
   const close = `<button type="button" class="book__close" data-close aria-label="Fechar"><svg><use href="#i-close"/></svg></button>`;
@@ -154,14 +151,12 @@
     if (PLANILHA) navigator.sendBeacon(PLANILHA, JSON.stringify(lead));
 
     const text = [
-      `Olá, Bárbara! ${abertura} e ${INTENCAO[intencao].frase}.`,
+      `Olá, Bárbara! ${INTENCAO[intencao].frase}`,
       "",
       `• Nome: ${lead.nome}`,
       `• Preciso de: ${lead.servico}`,
       `• Para quando: ${lead.urgencia}`,
       `• Bairro: ${lead.bairro}`,
-      "",
-      origem,
     ].join("\n");
     dlg.close();
     form.reset();
