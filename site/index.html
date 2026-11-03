@@ -71,7 +71,7 @@
       <span><svg aria-hidden="true"><use href="#i-clock"/></svg><span data-cfg="hoursShort">Seg a sáb</span></span>
     </div>
 
-    <button class="btn btn--plum header__cta" data-book>Agendar</button>
+    <button class="btn btn--plum header__cta" data-lead="agendar">Agendar</button>
     <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu" data-burger><span></span><span></span></button>
   </div>
 </header>
@@ -88,19 +88,13 @@
     </h1>
     <p class="hero__lead">Atendo cães e gatos, do filhote ao idoso, no consultório ou na sua casa. A consulta tem tempo para examinar direito e te explicar o que está acontecendo.</p>
     <div class="hero__actions">
-      <button class="btn btn--cream btn--lg" data-book>Agendar consulta <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
-      <a class="link-wa" data-cfg-href="whatsapp" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Prefiro falar no WhatsApp</a>
+      <button class="btn btn--cream btn--lg" data-lead="agendar">Agendar consulta <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
     </div>
     <svg class="hero__doodle" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-paw"/></svg>
   </div>
 
   <figure class="hero__photo reveal" style="--d:.08s">
     <img src="assets/img/pet-golden.webp" width="1100" height="1375" alt="Golden retriever sorridente">
-    <button class="slot-chip" data-next-slot>
-      <span class="slot-chip__icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span>
-      <span><strong>Próximo horário</strong><em data-next-slot-label>carregando…</em></span>
-      <svg class="slot-chip__go" aria-hidden="true"><use href="#i-arrow"/></svg>
-    </button>
   </figure>
 </section>
 
@@ -128,37 +122,37 @@
       <h3>Consulta clínica</h3>
       <p class="svc__meta">50 min · consultório</p>
       <svg class="svc__art" aria-hidden="true"><use href="#art-stetho"/></svg>
-      <button class="btn btn--plum btn--block" data-book="consulta">Agendar</button>
+      <button class="btn btn--plum btn--block" data-lead="agendar" data-servico="Consulta">Agendar</button>
     </article>
     <article class="svc reveal" style="--d:.06s">
       <h3>Vacinação</h3>
       <p class="svc__meta">20 min · com carteirinha</p>
       <svg class="svc__art" aria-hidden="true"><use href="#art-syringe"/></svg>
-      <button class="btn btn--plum btn--block" data-book="vacina">Agendar</button>
+      <button class="btn btn--plum btn--block" data-lead="agendar" data-servico="Vacina e vermífugo">Agendar</button>
     </article>
     <article class="svc reveal" style="--d:.1s">
       <h3>Atendimento domiciliar</h3>
       <p class="svc__meta">60 min · na sua casa</p>
       <svg class="svc__art" aria-hidden="true"><use href="#art-house"/></svg>
-      <button class="btn btn--plum btn--block" data-book="domiciliar">Agendar</button>
+      <button class="btn btn--plum btn--block" data-lead="agendar" data-servico="Atendimento em casa">Agendar</button>
     </article>
     <article class="svc reveal" style="--d:.14s">
       <h3>Check-up preventivo</h3>
       <p class="svc__meta">40 min · exames só se precisar</p>
       <svg class="svc__art" aria-hidden="true"><use href="#art-heart"/></svg>
-      <button class="btn btn--plum btn--block" data-book="checkup">Agendar</button>
+      <button class="btn btn--plum btn--block" data-lead="agendar" data-servico="Check-up">Agendar</button>
     </article>
 
     <aside class="top reveal" style="--d:.1s" aria-labelledby="top-title">
       <h3 class="top__title" id="top-title"><svg aria-hidden="true"><use href="#i-star"/></svg>Os mais procurados</h3>
       <ul class="top__list">
-        <li><button data-book="consulta"><span>Consulta clínica</span><em>50 min</em></button></li>
-        <li><button data-book="vacina"><span>Vacinas e vermifugação</span><em>20 min</em></button></li>
-        <li><button data-book="filhote"><span>Primeira consulta do filhote <small>(cão ou gato)</small></span><em>60 min</em></button></li>
-        <li><button data-book="senior"><span>Check-up do pet idoso</span><em>60 min</em></button></li>
-        <li><button data-book="retorno"><span>Retorno</span><em>30 min</em></button></li>
+        <li><button data-lead="agendar" data-servico="Consulta"><span>Consulta clínica</span><em>50 min</em></button></li>
+        <li><button data-lead="agendar" data-servico="Vacina e vermífugo"><span>Vacinas e vermifugação</span><em>20 min</em></button></li>
+        <li><button data-lead="agendar" data-servico="Filhote"><span>Primeira consulta do filhote <small>(cão ou gato)</small></span><em>60 min</em></button></li>
+        <li><button data-lead="agendar" data-servico="Pet idoso"><span>Check-up do pet idoso</span><em>60 min</em></button></li>
+        <li><button data-lead="agendar" data-servico="Retorno"><span>Retorno</span><em>30 min</em></button></li>
       </ul>
-      <button class="btn btn--cream btn--block" data-book>Escolher dia e horário</button>
+      <button class="btn btn--cream btn--block" data-lead="agendar">Quero agendar</button>
     </aside>
   </div>
 </section>
@@ -171,9 +165,9 @@
       <div class="step__img"><img src="assets/img/pet-vira-lata.webp" loading="lazy" width="900" height="1125" alt="Cachorro sem raça definida, de roupinha rosa, olhando para cima à espera"></div>
       <div class="step__body">
         <span class="step__n">01</span>
-        <h3>Você escolhe o horário</h3>
-        <p>Pelo site, em menos de um minuto.</p>
-        <button class="btn btn--plum btn--block" data-book>Agendar agora</button>
+        <h3>Você me chama</h3>
+        <p>Conta o que seu pet precisa e a gente combina o horário pelo WhatsApp.</p>
+        <button class="btn btn--plum btn--block" data-lead="agendar">Agendar agora</button>
       </div>
     </article>
     <article class="step reveal" style="--d:.06s">
@@ -182,7 +176,7 @@
         <span class="step__n">02</span>
         <h3>A consulta</h3>
         <p>Examino com calma e explico o que encontrei, sem termos difíceis.</p>
-        <button class="btn btn--plum btn--block" data-book="consulta">Agendar consulta</button>
+        <button class="btn btn--plum btn--block" data-lead="agendar" data-servico="Consulta">Agendar consulta</button>
       </div>
     </article>
     <article class="step reveal" style="--d:.12s">
@@ -191,7 +185,7 @@
         <span class="step__n">03</span>
         <h3>Os próximos passos</h3>
         <p>Você sai sabendo o que fazer em casa e quando voltar.</p>
-        <button class="btn btn--plum btn--block" data-book="checkup">Agendar check-up</button>
+        <button class="btn btn--plum btn--block" data-lead="agendar" data-servico="Check-up">Agendar check-up</button>
       </div>
     </article>
     <article class="step reveal" style="--d:.18s">
@@ -200,7 +194,7 @@
         <span class="step__n">04</span>
         <h3>Depois da consulta</h3>
         <p>Surgiu uma dúvida? Me chama no WhatsApp.</p>
-        <button class="btn btn--plum btn--block" data-book="retorno">Agendar retorno</button>
+        <button class="btn btn--plum btn--block" data-lead="agendar" data-servico="Retorno">Agendar retorno</button>
       </div>
     </article>
   </div>
@@ -221,7 +215,7 @@
         <li><strong>Consultório</strong><span>ou na sua casa</span></li>
         <li><strong>Sempre estudando</strong><span>cursos e congressos</span></li>
       </ul>
-      <button class="btn btn--plum btn--lg" data-book>Agendar com a Bárbara <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <button class="btn btn--plum btn--lg" data-lead="agendar">Agendar com a Bárbara <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
     </div>
   </div>
 </section>
@@ -231,12 +225,9 @@
   <div class="cta reveal">
     <div class="cta__text">
       <h2 class="cta__title">Vamos marcar a <span class="tag tag--plum">consulta?</span></h2>
-      <p>Escolha um horário abaixo ou abra a agenda completa. A Bárbara confirma pelo WhatsApp.</p>
+      <p>Conte o que seu pet precisa. A Bárbara responde pelo WhatsApp para combinar o melhor horário.</p>
     </div>
-    <div class="cta__slots">
-      <div class="cta__grid" data-quick-slots></div>
-      <button class="btn btn--plum btn--block btn--lg" data-book>Ver agenda completa <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
-    </div>
+    <button class="btn btn--plum btn--block btn--lg" data-lead="agendar">Quero agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
   </div>
 </section>
 
@@ -248,7 +239,7 @@
     <svg class="footer__logo" role="img" aria-label="Bárbara Fonseca, Médica Veterinária"><use href="#wordmark"/></svg>
     <div class="social">
       <a data-cfg-href="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
-      <a data-cfg-href="whatsapp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-chat"/></svg></a>
+      <a href="#agendar" data-lead="agendar" aria-label="WhatsApp"><svg><use href="#i-chat"/></svg></a>
       <a data-cfg-href="email" href="#" aria-label="E-mail"><svg><use href="#i-mail"/></svg></a>
     </div>
     <svg class="footer__dog" aria-hidden="true"><use href="#dog"/></svg>
@@ -256,7 +247,7 @@
   <div class="footer__info">
     <p class="footer__hours"><svg aria-hidden="true"><use href="#i-clock"/></svg><span data-cfg="hoursLong">Seg a sex · 8h às 18h · Sáb · 8h às 12h</span></p>
     <ul class="footer__contacts">
-      <li><svg aria-hidden="true"><use href="#i-phone"/></svg><a data-cfg-href="whatsapp" data-cfg="phoneDisplay" href="#" target="_blank" rel="noopener">(41) 9 8726-9000</a></li>
+      <li><svg aria-hidden="true"><use href="#i-phone"/></svg><a data-cfg-href="tel" data-cfg="phoneDisplay" href="#">(41) 9 8726-9000</a></li>
       <li><svg aria-hidden="true"><use href="#i-mail"/></svg><a data-cfg-href="email" data-cfg="email" href="#">contato@barbarafonseca.vet.br</a></li>
       <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-cfg="address">Rua Exemplo, 123 · Curitiba/PR</span></li>
     </ul>
@@ -266,91 +257,16 @@
       <a href="#como-funciona">Como funciona</a>
       <a href="#quem-cuida">Quem atende</a>
     </nav>
-    <p class="footer__legal">© <span data-year>2026</span> Bárbara Fonseca · Médica Veterinária</p>
+    <p class="footer__legal">© <span data-year>2026</span> Bárbara Fonseca · Médica Veterinária · <button type="button" class="linkish" data-privacy>Privacidade</button></p>
   </div>
 </footer>
 
 <!-- Barra fixa no celular -->
 <div class="dock" data-dock>
-  <button class="btn btn--plum btn--lg" data-book>Agendar consulta</button>
-  <a class="dock__wa" data-cfg-href="whatsapp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-chat"/></svg></a>
+  <button class="btn btn--plum btn--lg" data-lead="agendar">Agendar consulta</button>
 </div>
 
-<!-- ============ AGENDAMENTO ============ -->
-<dialog class="book" id="agendar" aria-labelledby="book-title" data-book-dialog>
-  <form class="book__form" data-book-form novalidate>
-    <header class="book__head">
-      <div class="book__brand">
-        <svg aria-hidden="true"><use href="#dog"/></svg>
-        <div>
-          <p class="book__kicker">Agendamento online</p>
-          <h2 id="book-title" data-step-title>Qual atendimento?</h2>
-        </div>
-      </div>
-      <button type="button" class="book__close" data-book-close aria-label="Fechar"><svg><use href="#i-close"/></svg></button>
-      <ol class="book__progress" aria-hidden="true"><li></li><li></li><li></li><li></li></ol>
-    </header>
-
-    <div class="book__body">
-      <!-- Passo 1: serviço -->
-      <section class="book__step" data-step="1">
-        <fieldset>
-          <legend class="sr">Tipo de atendimento</legend>
-          <div class="opts" data-services></div>
-        </fieldset>
-        <fieldset class="where">
-          <legend>Onde?</legend>
-          <div class="seg">
-            <label><input type="radio" name="local" value="Consultório" checked><span>No consultório</span></label>
-            <label><input type="radio" name="local" value="Domiciliar"><span>Na minha casa</span></label>
-          </div>
-        </fieldset>
-      </section>
-
-      <!-- Passo 2: data e hora -->
-      <section class="book__step" data-step="2" hidden>
-        <fieldset>
-          <legend class="label">Dia</legend>
-          <div class="days" data-days></div>
-        </fieldset>
-        <fieldset>
-          <legend class="label">Horário <span class="label__hint" data-day-label></span></legend>
-          <div class="times" data-times></div>
-        </fieldset>
-      </section>
-
-      <!-- Passo 3: dados -->
-      <section class="book__step" data-step="3" hidden>
-        <div class="fields">
-          <label class="field"><span>Nome do pet</span><input name="pet" autocomplete="off" required placeholder="Ex.: Thor"></label>
-          <fieldset class="field">
-            <legend>Ele é…</legend>
-            <div class="seg seg--3">
-              <label><input type="radio" name="especie" value="Cão" checked><span>Cão</span></label>
-              <label><input type="radio" name="especie" value="Gato"><span>Gato</span></label>
-              <label><input type="radio" name="especie" value="Outro"><span>Outro</span></label>
-            </div>
-          </fieldset>
-          <label class="field"><span>Seu nome</span><input name="tutor" autocomplete="name" required placeholder="Como podemos te chamar?"></label>
-          <label class="field"><span>Seu WhatsApp</span><input name="fone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(41) 9 0000-0000" data-phone></label>
-          <label class="field field--full"><span>Algo que a Bárbara deve saber? <em>(opcional)</em></span><textarea name="obs" rows="3" placeholder="Sintomas, idade, medicações, se tem medo de consulta…"></textarea></label>
-        </div>
-      </section>
-
-      <!-- Passo 4: resumo -->
-      <section class="book__step" data-step="4" hidden>
-        <div class="summary" data-summary></div>
-        <p class="book__note">Ao confirmar, abrimos o WhatsApp com tudo preenchido. A Bárbara responde confirmando o horário.</p>
-      </section>
-    </div>
-
-    <footer class="book__foot">
-      <button type="button" class="btn btn--ghost" data-back>Voltar</button>
-      <button type="submit" class="btn btn--plum btn--lg" data-next>Continuar <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
-    </footer>
-  </form>
-</dialog>
-
+<script src="lead.js" data-pagina="site" defer></script>
 <script src="script.js" defer></script>
 </body>
 </html>

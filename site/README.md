@@ -3,37 +3,31 @@
 Site estático (HTML + CSS + JS puro, sem build). Para publicar, suba a pasta `site/` em qualquer hospedagem (Vercel, Netlify, Hostinger…).
 
 ## Antes de publicar
-Edite o objeto `CONFIG` no topo de `script.js`:
+- Edite o `CONFIG` no topo de `script.js` com os dados reais (`email`, `instagram`, `address`, `crmv`). Os contatos do HTML são preenchidos a partir dele.
+- Ligue a planilha de leads (abaixo).
 
-- `email`, `instagram`, `address`, `crmv`: dados reais
-- `schedule`: horários de atendimento por dia da semana
-- `blocked`: feriados ou horários já ocupados (`"2026-12-25"` ou `"2026-10-08 14:00"`)
+## Formulário de lead (site e link da bio)
+Não há mais agenda online: todo botão de agendar abre um formulário curto e a conversa segue no WhatsApp com a Bárbara.
 
-Os textos de contato no HTML são preenchidos automaticamente a partir do `CONFIG`.
+- `lead.js` cria o formulário, a política de privacidade e o aviso de cookies nas duas páginas.
+- Qualquer elemento com `data-lead="agendar"` (ou `"conhecer"`) abre o formulário. `data-servico="Vacina e vermífugo"` já marca o que a pessoa precisa. `/#agendar` abre o formulário direto.
+- Perguntas: nome, WhatsApp, o que precisa, bairro, para quando e aceite de privacidade (LGPD).
+- Ao enviar, o lead vai para a planilha (aba **Site** ou **Bio**) e o WhatsApp abre com as respostas e a origem.
 
-**Depoimentos:** os depoimentos em `index.html` são exemplos. Troque por avaliações reais.
+### Planilha (Google Sheets)
+1. Crie uma planilha no Google Sheets > Extensões > Apps Script > cole `planilha-leads.gs` (na raiz do repositório) > salvar.
+2. Implantar > Nova implantação > App da Web. Executar como: **Eu**. Quem pode acessar: **Qualquer pessoa**. Implantar e autorizar.
+3. Cole a URL que termina em `/exec` em `PLANILHA`, no topo de `lead.js`. Enquanto estiver vazio, o formulário só abre o WhatsApp.
 
-## Agendamento
-Todo botão com `data-book` abre o agendamento (`data-book="vacina"` já abre com o serviço escolhido).
-Fluxo: serviço → dia/horário → dados do pet e do tutor → resumo → abre o WhatsApp com a mensagem pronta.
-A lista de serviços fica em `SERVICES`, no `script.js`.
+As abas "Site" e "Bio" são criadas sozinhas no primeiro lead de cada uma.
 
-## Link na bio (`/links`)
-Página `links.html`, servida em `/links`. Vídeo, o que a Bárbara faz e dois botões: **Quero agendar** e **Quero conhecer**.
-Cada botão abre um formulário curto (nome, WhatsApp, o que precisa, bairro, para quando e aceite de privacidade).
-Ao enviar, o lead vai para a planilha Google e a pessoa segue para o WhatsApp com tudo preenchido.
-A página não leva para o site, para não perder a origem.
+### Origem (UTM)
+- Bio do Instagram (orgânico): `https://DOMINIO/links?utm_source=instagram&utm_medium=bio` (sem UTM, `/links` também conta como bio)
+- Anúncio no link da bio: `https://DOMINIO/links?utm_source=instagram&utm_medium=paid&utm_campaign=NOME` (no Meta Ads dá para usar `utm_campaign={{campaign.name}}`)
+- Anúncio no site: `https://DOMINIO/?utm_source=google&utm_medium=cpc&utm_campaign=NOME`
+- Site sem UTM conta como acesso direto (orgânico).
 
-- **Planilha:** publique `planilha-leads.gs` (na raiz do repositório) como App da Web e cole a URL `/exec` em `PLANILHA`, no `links.html`. Enquanto estiver vazio, o formulário só abre o WhatsApp.
-- **Cookies e privacidade:** aviso de cookies na primeira visita e política de privacidade (LGPD) dentro da página. Pixel da Meta ou GA4 só devem carregar com o aceite (`localStorage bf-cookies = "sim"`).
-- **Vídeo:** suba em `assets/video/barbara.mp4` (vertical 9:16, H.264, até ~8 MB). Sem o arquivo aparece a foto e o botão de som some.
-- **Bio do Instagram (orgânico):** `https://DOMINIO/links?utm_source=instagram&utm_medium=bio`
-- **Anúncios:** `https://DOMINIO/links?utm_source=instagram&utm_medium=paid&utm_campaign=NOME`
-  (no Meta Ads dá para usar `utm_campaign={{campaign.name}}`)
-- **Stories (orgânico):** `utm_medium=stories`
-
-Regra: `utm_medium` = `paid`, `cpc`, `ppc`, `ads` ou `anuncio` conta como anúncio; o resto é orgânico. Sem UTM, `/links` conta como bio.
-Mensagem que chega para a Bárbara (exemplo de anúncio):
+Regra: `utm_medium` = `paid`, `cpc`, `ppc`, `ads` ou `anuncio` conta como anúncio; o resto é orgânico. Mensagem que chega para a Bárbara:
 
     Olá, Bárbara! Vi seu anúncio e quero agendar um atendimento para o meu pet.
 
@@ -42,11 +36,20 @@ Mensagem que chega para a Bárbara (exemplo de anúncio):
     • Para quando: Esta semana
     • Bairro: Batel
 
-    Origem: anúncio · instagram · paid · vacina-nov
+    Origem: site · anúncio (google · cpc · vacina-nov)
+
+### Cookies
+Aviso na primeira visita, com a escolha guardada no navegador. Pixel da Meta ou GA4 só devem carregar com o aceite (`localStorage bf-cookies = "sim"`).
+
+## Link na bio (`/links`)
+Página `links.html`, servida em `/links`: vídeo, o que a Bárbara faz e os botões **Quero agendar** e **Quero conhecer**. Não leva para o site, para não perder a origem.
+Vídeo: suba em `assets/video/barbara.mp4` (vertical 9:16, H.264, até ~8 MB). Sem o arquivo aparece a selfie dela e o botão de som some.
 
 ## Estrutura
 - `index.html`: página + logotipo vetorizado embutido
+- `links.html`: link na bio
+- `lead.js`: formulário de lead, privacidade e cookies (site e bio)
 - `styles.css`: tokens da marca (Ameixa #653A47, Creme #F7F0E4, Sálvia #A0AD90)
-- `script.js`: agenda, menu, carrossel e animações
+- `script.js`: contatos, menu e animações do site
 - `assets/fonts`: Parkinsans (títulos) e Onest (texto), auto-hospedadas
 - `assets/img`: fotos otimizadas em WebP

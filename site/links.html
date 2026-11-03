@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Link na bio: usa os tokens, botões e fontes de styles.css */
-    [hidden] { display: none !important; }
     body { background: var(--ameixa-ink); color: var(--creme); }
-    .linkish { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
     :focus-visible { outline-color: var(--salvia); }
     .soft { color: color-mix(in srgb, var(--creme) 74%, transparent); }
 
@@ -63,37 +61,6 @@
 
     .lb__foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; margin-top: 36px; padding-top: 16px; border-top: 1px solid rgba(247, 240, 228, .14); font-size: 13px; }
 
-    /* formulário (o resto vem de .book/.field/.seg em styles.css) */
-    .field select {
-      width: 100%; padding: 13px 14px; border: 0; border-radius: 12px;
-      background: #fff; box-shadow: inset 0 0 0 1.5px var(--line);
-      font: 400 16px/1.3 var(--body); color: var(--ink);
-    }
-    .field select:focus { outline: none; box-shadow: inset 0 0 0 2px var(--ameixa); }
-    .field input:user-invalid, .field select:user-invalid { box-shadow: inset 0 0 0 2px #B4483A; }
-    .lead__alert { display: none; padding: 12px 14px; border-radius: 12px; background: #F6E3DF; color: #7A2E22; font-size: 14px; line-height: 1.4; }
-    .fields:has(input[value="Hoje"]:checked) .lead__alert { display: block; }
-    .lead__ok { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.4; color: var(--muted); }
-    .lead__ok input { flex-shrink: 0; width: 20px; height: 20px; margin: 0; accent-color: var(--ameixa); }
-    .lead__ok .linkish, .privacy { color: var(--ameixa); }
-    .privacy h3 { margin-top: 16px; font: 600 15px/1.3 var(--display); color: var(--ameixa-ink); }
-    .privacy h3:first-child { margin-top: 0; }
-    .privacy p { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
-    .privacy { padding-bottom: 24px; }
-
-    /* aviso de cookies */
-    .cookie {
-      position: fixed; z-index: 50; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom));
-      display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px;
-      max-width: 560px; margin-inline: auto; padding: 14px 16px;
-      border-radius: 20px; background: var(--papel); color: var(--ink);
-      box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .6);
-      font-size: 14px; line-height: 1.4;
-    }
-    .cookie p { flex: 1 1 260px; }
-    .cookie .linkish { color: var(--ameixa); }
-    .cookie__btns { display: flex; gap: 8px; flex: 1 1 200px; }
-    .cookie__btns .btn { flex: 1; }
 
     @media (min-width: 900px) {
       .lb { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
@@ -185,178 +152,9 @@
   </main>
 </div>
 
-<!-- Formulário do lead (estilos do agendamento, em styles.css) -->
-<dialog class="book" aria-labelledby="lead-title" data-lead-dialog>
-  <form class="book__form" data-lead-form>
-    <header class="book__head">
-      <div class="book__brand">
-        <svg aria-hidden="true"><use href="#dog"/></svg>
-        <div>
-          <p class="book__kicker">Leva menos de 30 segundos</p>
-          <h2 id="lead-title" data-lead-title>Vamos agendar</h2>
-        </div>
-      </div>
-      <button type="button" class="book__close" data-close aria-label="Fechar"><svg><use href="#i-close"/></svg></button>
-    </header>
-
-    <div class="book__body">
-      <div class="fields">
-        <label class="field"><span>Seu nome</span><input name="nome" autocomplete="name" required maxlength="80" pattern=".*\S.*" placeholder="Como posso te chamar?"></label>
-        <label class="field"><span>Seu WhatsApp</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(41) 9 0000-0000" pattern="\(\d{2}\) \d{4,5}-\d{4}" title="DDD + número" data-phone></label>
-        <label class="field"><span>O que você precisa?</span>
-          <select name="servico" required>
-            <option value="" selected disabled>Escolha</option>
-            <option>Consulta</option>
-            <option>Vacina e vermífugo</option>
-            <option>Check-up</option>
-            <option>Atendimento em casa</option>
-            <option>Filhote</option>
-            <option>Pet idoso</option>
-            <option>Ainda não sei</option>
-          </select>
-        </label>
-        <label class="field"><span>Seu bairro</span><input name="bairro" autocomplete="address-level3" required maxlength="60" pattern=".*\S.*" placeholder="Ex.: Batel"></label>
-        <fieldset class="field field--full">
-          <legend>Para quando?</legend>
-          <div class="seg seg--3">
-            <label><input type="radio" name="urgencia" value="Hoje" required><span>Hoje</span></label>
-            <label><input type="radio" name="urgencia" value="Esta semana"><span>Esta semana</span></label>
-            <label><input type="radio" name="urgencia" value="Sem pressa"><span>Sem pressa</span></label>
-          </div>
-        </fieldset>
-        <p class="lead__alert field--full" role="note">Se for emergência (sangramento, convulsão, suspeita de envenenamento ou falta de ar), procure agora um pronto-atendimento veterinário 24h.</p>
-        <label class="lead__ok field--full">
-          <input type="checkbox" name="aceite" required>
-          <span>Autorizo o uso dos meus dados para a Bárbara falar comigo, conforme a <button type="button" class="linkish" data-privacy>política de privacidade</button>.</span>
-        </label>
-      </div>
-    </div>
-
-    <footer class="book__foot">
-      <button type="submit" class="btn btn--plum btn--lg"><svg aria-hidden="true"><use href="#i-chat"/></svg>Continuar no WhatsApp</button>
-    </footer>
-  </form>
-</dialog>
-
-<!-- Política de privacidade (LGPD). Revisar com o jurídico antes de publicar. -->
-<dialog class="book" aria-labelledby="priv-title" data-privacy-dialog>
-  <div class="book__form">
-    <header class="book__head">
-      <div class="book__brand">
-        <svg aria-hidden="true"><use href="#dog"/></svg>
-        <div><p class="book__kicker">LGPD</p><h2 id="priv-title">Política de privacidade</h2></div>
-      </div>
-      <button type="button" class="book__close" data-close aria-label="Fechar"><svg><use href="#i-close"/></svg></button>
-    </header>
-    <div class="book__body privacy">
-      <h3>Quem cuida dos seus dados</h3>
-      <p>Bárbara Fonseca, médica veterinária, Curitiba/PR. Contato: WhatsApp (41) 9 8726-9000.</p>
-      <h3>O que coletamos</h3>
-      <p>Quando você preenche o formulário: nome, WhatsApp, bairro, o que o seu pet precisa e para quando. Também registramos de onde você chegou (por exemplo, o perfil do Instagram ou um anúncio), a partir do link que você clicou.</p>
-      <h3>Para quê</h3>
-      <p>Responder você, agendar o atendimento e entender quais canais trazem contatos. Não vendemos nem repassamos seus dados para terceiros.</p>
-      <h3>Onde ficam</h3>
-      <p>Numa planilha Google de acesso restrito e na conversa do WhatsApp.</p>
-      <h3>Cookies</h3>
-      <p>Guardamos no seu navegador apenas a sua escolha sobre cookies. Ferramentas de medição só são ativadas se você aceitar.</p>
-      <h3>Por quanto tempo e seus direitos</h3>
-      <p>Mantemos os dados enquanto forem necessários para o atendimento. Você pode pedir acesso, correção ou exclusão a qualquer momento pelo WhatsApp.</p>
-    </div>
-  </div>
-</dialog>
-
-<!-- Aviso de cookies -->
-<div class="cookie" role="region" aria-label="Aviso de cookies" hidden data-cookie>
-  <p>Usamos cookies para entender como você chegou aqui e melhorar o atendimento. <button type="button" class="linkish" data-privacy>Saiba mais</button></p>
-  <div class="cookie__btns">
-    <button type="button" class="btn btn--ghost" data-cookie-choice="nao">Recusar</button>
-    <button type="button" class="btn btn--plum" data-cookie-choice="sim">Aceitar</button>
-  </div>
-</div>
+<script src="lead.js" data-pagina="bio" defer></script>
 
 <script>
-  /* Mesmo número do CONFIG em script.js */
-  const WHATSAPP = "5541987269000";
-  /* URL do Apps Script da planilha (termina em /exec). Vazio = não salva, só abre o WhatsApp. */
-  const PLANILHA = "";
-
-  const $ = (s) => document.querySelector(s);
-  const store = {
-    get(k) { try { return localStorage.getItem(k); } catch { return null; } },
-    set(k, v) { try { localStorage.setItem(k, v); } catch { /* sem storage */ } },
-  };
-
-  /* ---------- UTMs ----------
-     Orgânico (bio):  /links?utm_source=instagram&utm_medium=bio
-     Anúncio:         /links?utm_source=instagram&utm_medium=paid&utm_campaign=NOME
-     Sem UTM conta como bio. Vão para a planilha e para a mensagem do WhatsApp. */
-  const utm = Object.fromEntries([...new URLSearchParams(location.search)].filter(([k]) => k.startsWith("utm_")));
-  if (!utm.utm_source && !utm.utm_medium) Object.assign(utm, { utm_source: "instagram", utm_medium: "bio" });
-  const paid = /paid|cpc|ppc|^ads?$|anuncio/i.test(utm.utm_medium || "");
-  const tipo = paid ? "anúncio" : "orgânico";
-  const origem = `Origem: ${tipo} · ${[utm.utm_source, utm.utm_medium, utm.utm_campaign].filter(Boolean).join(" · ")}`;
-
-  /* ---------- formulário → planilha → WhatsApp ---------- */
-  const INTENCAO = {
-    agendar: { titulo: "Vamos agendar", frase: "quero agendar um atendimento para o meu pet" },
-    conhecer: { titulo: "Vamos conversar", frase: "quero conhecer melhor o seu trabalho" },
-  };
-  const leadDlg = $("[data-lead-dialog]");
-  const form = $("[data-lead-form]");
-  let intencao = "agendar";
-
-  document.querySelectorAll("[data-lead]").forEach((a) => a.addEventListener("click", (e) => {
-    e.preventDefault();
-    intencao = a.dataset.lead;
-    $("[data-lead-title]").textContent = INTENCAO[intencao].titulo;
-    leadDlg.showModal();
-  }));
-
-  const phone = $("[data-phone]");
-  phone.addEventListener("input", () => {
-    const d = phone.value.replace(/\D/g, "").slice(0, 11);
-    phone.value = d.length > 7 ? `(${d.slice(0, 2)}) ${d.slice(2, -4)}-${d.slice(-4)}` : d.length > 2 ? `(${d.slice(0, 2)}) ${d.slice(2)}` : d;
-  });
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const f = Object.fromEntries(new FormData(form));
-    const lead = { intencao, nome: f.nome.trim(), whatsapp: f.whatsapp, servico: f.servico, urgencia: f.urgencia, bairro: f.bairro.trim(), tipo, ...utm };
-    if (PLANILHA) navigator.sendBeacon(PLANILHA, JSON.stringify(lead));
-
-    const text = [
-      `Olá, Bárbara! ${paid ? "Vi seu anúncio" : "Vim pelo seu Instagram"} e ${INTENCAO[intencao].frase}.`,
-      "",
-      `• Nome: ${lead.nome}`,
-      `• Preciso de: ${lead.servico}`,
-      `• Para quando: ${lead.urgencia}`,
-      `• Bairro: ${lead.bairro}`,
-      "",
-      origem,
-    ].join("\n");
-    leadDlg.close();
-    form.reset();
-    location.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
-  });
-
-  /* ---------- privacidade e diálogos ---------- */
-  const privDlg = $("[data-privacy-dialog]");
-  document.querySelectorAll("[data-privacy]").forEach((b) => b.addEventListener("click", () => privDlg.showModal()));
-  document.querySelectorAll("dialog").forEach((d) => {
-    d.querySelector("[data-close]").addEventListener("click", () => d.close());
-    d.addEventListener("click", (e) => { if (e.target === d) d.close(); });
-  });
-
-  /* ---------- cookies ----------
-     Pixel da Meta / GA4: carregar só quando store.get("bf-cookies") === "sim". */
-  const cookie = $("[data-cookie]");
-  cookie.hidden = !!store.get("bf-cookies");
-  cookie.addEventListener("click", (e) => {
-    const v = e.target.closest("[data-cookie-choice]")?.dataset.cookieChoice;
-    if (!v) return;
-    store.set("bf-cookies", v);
-    cookie.hidden = true;
-  });
   /* ---------- vídeo ---------- */
   const video = document.querySelector("[data-video]");
   const sound = document.querySelector("[data-sound]");
