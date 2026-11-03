@@ -12,7 +12,7 @@
 (() => {
   const WHATSAPP = "5541987269000";   // mesmo número do CONFIG em script.js
   /* URL do Apps Script da planilha (termina em /exec). Vazio = não salva, só abre o WhatsApp. */
-  const PLANILHA = "";
+  const PLANILHA = "https://script.google.com/macros/s/AKfycbymSGXTdbaV4VChAdw70yyF9ZaoRHx9XUv1nkXsXtLWtwK4faiHB0ELa7-v7DJCWB7Ngw/exec";
 
   const PAGINA = document.currentScript.dataset.pagina === "bio" ? "bio" : "site";
   const SERVICOS = ["Consulta", "Vacina e vermífugo", "Check-up", "Atendimento em casa", "Filhote", "Pet idoso", "Retorno", "Ainda não sei"];
