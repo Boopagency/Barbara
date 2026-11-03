@@ -12,7 +12,7 @@ Não há mais agenda online: todo botão de agendar abre um formulário curto e 
 - `lead.js` cria o formulário, a política de privacidade e o aviso de cookies nas duas páginas.
 - Qualquer elemento com `data-lead="agendar"` (ou `"conhecer"`) abre o formulário. `data-servico="Vacina e vermífugo"` já marca o que a pessoa precisa. `/#agendar` abre o formulário direto.
 - Perguntas: nome, WhatsApp, o que precisa, bairro, para quando e aceite de privacidade (LGPD).
-- Ao enviar, o lead vai para a planilha (aba **Site** ou **Bio**, com a origem) e o WhatsApp abre só com as respostas.
+- Ao enviar, o lead vai para a planilha (aba **Site** ou **Bio**, com a origem) e o WhatsApp abre com as respostas, começando com "Vim pelo seu Instagram" (bio) ou "Vim pelo seu site".
 
 ### Planilha (Google Sheets)
 1. Crie uma planilha no Google Sheets > Extensões > Apps Script > cole `planilha-leads.gs` (na raiz do repositório) > salvar.
@@ -33,7 +33,7 @@ Site: https://www.barbarafonsecavet.com.br · Link na bio: https://bio.barbarafo
 
 Regra: `utm_medium` = `paid`, `cpc`, `ppc`, `ads` ou `anuncio` conta como anúncio; o resto é orgânico. A origem fica só na planilha. Mensagem que chega para a Bárbara:
 
-    Olá, Bárbara! Quero agendar um atendimento para o meu pet.
+    Olá, Bárbara! Vim pelo seu site e quero agendar um atendimento para o meu pet.
 
     • Nome: Ana
     • Preciso de: Vacina e vermífugo
