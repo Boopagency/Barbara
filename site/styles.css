@@ -668,7 +668,6 @@ html:has(.book[open]) { overflow: hidden; }
   .hero { grid-template-columns: 1fr; }
   .hero__card { min-height: 0; gap: 22px; padding-top: 80px; }
   .hero__photo { aspect-ratio: 4 / 3.6; min-height: 0; }
-  .hero__photo img { object-position: 50% 56%; }
 
   .about { grid-template-columns: 1fr 1fr; grid-template-rows: none; row-gap: var(--gap); }
   .about__statement { grid-column: 1 / -1; grid-row: auto; padding-bottom: 10px; max-width: 22ch; }
