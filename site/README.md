@@ -1,4 +1,4 @@
-# Site · Bárbara Fonseca, Médica Veterinária
+# Site · Barbara Fonseca, Médica Veterinária
 
 Site estático (HTML + CSS + JS puro, sem build). Para publicar, suba a pasta `site/` em qualquer hospedagem (Vercel, Netlify, Hostinger…).
 
@@ -7,7 +7,7 @@ Site estático (HTML + CSS + JS puro, sem build). Para publicar, suba a pasta `s
 - Ligue a planilha de leads (abaixo).
 
 ## Formulário de lead (site e link da bio)
-Não há mais agenda online: todo botão de agendar abre um formulário curto e a conversa segue no WhatsApp com a Bárbara.
+Não há mais agenda online: todo botão de agendar abre um formulário curto e a conversa segue no WhatsApp com a Barbara.
 
 - `lead.js` cria o formulário, a política de privacidade e o aviso de cookies nas duas páginas.
 - Qualquer elemento com `data-lead="agendar"` (ou `"conhecer"`) abre o formulário. `data-servico="Vacina e vermífugo"` já marca o que a pessoa precisa. `/#agendar` abre o formulário direto.
@@ -31,9 +31,9 @@ Site: https://www.barbarafonsecavet.com.br · Link na bio: https://bio.barbarafo
 - **Site pelo Perfil da Empresa no Google (Maps):** cadastre o site como `https://www.barbarafonsecavet.com.br/?utm_source=google&utm_medium=perfil-empresa`.
 - Site sem UTM e sem vir do Google conta como `direto`.
 
-Regra: `utm_medium` = `paid`, `cpc`, `ppc`, `ads` ou `anuncio` conta como anúncio; o resto é orgânico. A origem fica só na planilha. Mensagem que chega para a Bárbara:
+Regra: `utm_medium` = `paid`, `cpc`, `ppc`, `ads` ou `anuncio` conta como anúncio; o resto é orgânico. A origem fica só na planilha. Mensagem que chega para a Barbara:
 
-    Olá, Bárbara! Vim pelo seu site e quero agendar um atendimento para o meu pet.
+    Olá, Barbara! Vim pelo seu site e quero agendar um atendimento para o meu pet.
 
     • Nome: Ana
     • Preciso de: Vacina e vermífugo
@@ -44,7 +44,7 @@ Regra: `utm_medium` = `paid`, `cpc`, `ppc`, `ads` ou `anuncio` conta como anúnc
 Aviso na primeira visita, com a escolha guardada no navegador. Pixel da Meta ou GA4 só devem carregar com o aceite (`localStorage bf-cookies = "sim"`).
 
 ## Link na bio (`bio.barbarafonsecavet.com.br`)
-Página `links.html`, servida em `/links` e no subdomínio `bio.` (redirecionamento no `vercel.json`): vídeo, o que a Bárbara faz e os botões **Quero agendar** e **Quero conhecer**. Não leva para o site, para não perder a origem.
+Página `links.html`, servida em `/links` e no subdomínio `bio.` (redirecionamento no `vercel.json`): vídeo, o que a Barbara faz e os botões **Quero agendar** e **Quero conhecer**. Não leva para o site, para não perder a origem.
 Vídeo: suba em `assets/video/barbara.mp4` (vertical 9:16, H.264, até ~8 MB). Sem o arquivo aparece a foto dela de jaleco e o botão de som some.
 
 ## Estrutura
