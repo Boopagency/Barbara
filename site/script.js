@@ -1,5 +1,5 @@
 /* ==========================================================
-   Bárbara Fonseca · Médica Veterinária
+   Barbara Fonseca · Médica Veterinária
    Contatos do site. O formulário de lead fica em lead.js.
    ========================================================== */
 

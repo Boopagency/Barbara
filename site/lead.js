@@ -73,7 +73,7 @@
         <p class="lead__alert field--full" role="note">Se for emergência (sangramento, convulsão, suspeita de envenenamento ou falta de ar), procure agora um pronto-atendimento veterinário 24h.</p>
         <label class="lead__ok field--full">
           <input type="checkbox" name="aceite" required>
-          <span>Autorizo o uso dos meus dados para a Bárbara falar comigo, conforme a <button type="button" class="linkish" data-privacy>política de privacidade</button>.</span>
+          <span>Autorizo o uso dos meus dados para a Barbara falar comigo, conforme a <button type="button" class="linkish" data-privacy>política de privacidade</button>.</span>
         </label>
       </div>
     </div>
@@ -89,7 +89,7 @@
     <header class="book__head">${brand("LGPD", "Política de privacidade", "priv-title")}${close}</header>
     <div class="book__body privacy">
       <h3>Quem cuida dos seus dados</h3>
-      <p>Bárbara Fonseca, médica veterinária, Curitiba/PR. Contato: WhatsApp (41) 9 8726-9000.</p>
+      <p>Barbara Fonseca, médica veterinária, Curitiba/PR. Contato: WhatsApp (41) 9 8726-9000.</p>
       <h3>O que coletamos</h3>
       <p>Quando você preenche o formulário: nome, WhatsApp, bairro, o que o seu pet precisa e para quando. Também registramos de onde você chegou (por exemplo, o perfil do Instagram, o site ou um anúncio), a partir do link que você clicou.</p>
       <h3>Para quê</h3>
@@ -152,7 +152,7 @@
     if (PLANILHA) navigator.sendBeacon(PLANILHA, JSON.stringify(lead));
 
     const text = [
-      `Olá, Bárbara! ${via} e ${INTENCAO[intencao].frase}.`,
+      `Olá, Barbara! ${via} e ${INTENCAO[intencao].frase}.`,
       "",
       `• Nome: ${lead.nome}`,
       `• Preciso de: ${lead.servico}`,
