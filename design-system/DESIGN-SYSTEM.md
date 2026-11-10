@@ -365,6 +365,8 @@ Copie o modelo, troque só o texto e o `src` da foto. Não invente classe nova.
 .bf-tarja--salvia > span { background: var(--bf-salvia); color: var(--bf-creme); }
 .bf-tarja--creme > span { background: var(--bf-creme); color: var(--bf-ameixa); }
 .bf-tarja--esq { text-align: left; align-items: flex-start; }
+.bf-tarja--grande { font-size: 92px; font-weight: 700; line-height: 1.02; gap: 10px; }
+.bf-tarja--grande > span { padding: 10px 26px 18px; }
 
 /* Etiqueta: rótulo curto em uma linha (nome do item, do passo) */
 .bf-etiqueta { align-self: flex-start; display: inline-block; padding: 8px 22px 12px; background: var(--bf-salvia); color: var(--bf-ameixa-ink); font: 700 44px/1.05 var(--bf-display); }
@@ -440,7 +442,7 @@ Para exportar: abra o HTML no navegador e capture cada `.bf-slide` em 1080 × 13
 | `bf-slide` + `bf-slide--ameixa / vinho / creme / papel / salvia / foto` | O slide e o seu fundo |
 | `bf-logo`, `bf-by`, `bf-handle`, `bf-arrasta` | Moldura fixa (símbolo, assinatura, arroba, "Arrasta") |
 | `bf-body` + `--centro / --fim / --entre` | Área de conteúdo e alinhamento vertical |
-| `bf-tarja` + `--salvia / --creme / --esq` | Título em caixas, um `<span>` por linha |
+| `bf-tarja` + `--salvia / --creme / --esq / --grande` | Título em caixas, um `<span>` por linha |
 | `bf-etiqueta` + `--ameixa / --creme` | Rótulo de uma linha |
 | `bf-texto` + `--menor` | Texto corrido (Manrope 50 / 40 px) |
 | `bf-punch` + `--grande` | Frase de impacto (Parkinsans 800, 56 / 76 px) |

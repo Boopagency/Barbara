@@ -81,6 +81,8 @@
 .bf-tarja--salvia > span { background: var(--bf-salvia); color: var(--bf-creme); }
 .bf-tarja--creme > span { background: var(--bf-creme); color: var(--bf-ameixa); }
 .bf-tarja--esq { text-align: left; align-items: flex-start; }
+.bf-tarja--grande { font-size: 92px; font-weight: 700; line-height: 1.02; gap: 10px; }
+.bf-tarja--grande > span { padding: 10px 26px 18px; }
 
 /* Etiqueta: rótulo curto em uma linha (nome do item, do passo) */
 .bf-etiqueta { align-self: flex-start; display: inline-block; padding: 8px 22px 12px; background: var(--bf-salvia); color: var(--bf-ameixa-ink); font: 700 44px/1.05 var(--bf-display); }
