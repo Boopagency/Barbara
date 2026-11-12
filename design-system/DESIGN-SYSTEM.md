@@ -16,98 +16,114 @@ Como trabalhar:
 
 ## 2. Regras da marca
 
-Barbara Fonseca é médica veterinária em Curitiba. A marca é pessoal: quem procura um veterinário procura alguém em quem confiar. Tudo aqui serve para montar carrosséis de Instagram do perfil @barbarafonsecavet com a mesma cara, sempre.
+Barbara Fonseca é médica veterinária em Curitiba: consultório no Mossunguê e atendimento em casa. A marca é ela, pelo nome, e não uma clínica. Tudo aqui serve para montar carrosséis e posts estáticos do @barbarafonsecavet com a mesma cara, sempre.
 
-### Voz e texto
+### Quem fala e com quem
 
-- A marca é **acolhedora, confiável e próxima**. Em volta disso: alegre, calma, sensível, elegante, cuidadosa, contemporânea, afetuosa, leve, profissional e autêntica.
-- Quem fala é a Barbara, em primeira pessoa, com o tutor: "se o Hachiko fosse **meu paciente hoje**", "a parte de cuidar dele é **contigo**". Trate o tutor por "você".
-- Escreva como ela fala no consultório: frases curtas, palavra de gente. Jargão sempre traduzido na mesma frase: "Era **filária**, o verme do coração".
-- Conte por história ou por lista, nunca por bronca. O tutor não é culpado; ele só não sabia. Sem alarmismo: diga o risco e o que fazer.
-- Toda recomendação de saúde termina em atitude clara: "Ligue para um médico veterinário de sua confiança", "Não espere o dia seguinte". Nunca indique dose nem remédio.
-- Caixa normal no texto; frases podem começar em minúscula quando continuam o slide anterior. Caixa-alta só em `titulo-caixa` e `legenda`.
-- Negrito em uma a três palavras por bloco, as que contam a história sozinhas. Sublinhado só na recomendação final.
-- No máximo um emoji por carrossel, na capa, e só se for o bicho do assunto. Sem hashtags na arte.
-- Escreva "Barbara", sem acento, no texto. O acento existe só dentro do logotipo.
-- Revise a gramática antes de fechar: "a maioria dos tutores não sabe", "por que" separado em pergunta.
+- Fala a Barbara, em primeira pessoa, com o tutor. Ela vende pela confiança, explicando o porquê de cada cuidado, e não por abordagem comercial.
+- O leitor que ela quer é o tutor gentil e interessado no bem-estar do animal, que entende que "estamos juntos, buscando o melhor para o paciente". Tutor de gato é o mais receptivo a novidade e bem-estar.
+- O que ela defende: cada animal é avaliado do seu jeito. "Nem todo cão precisa utilizar antipulgas continuamente", nem todo paciente precisa da vacina de giárdia. Ela não indica nada desnecessário.
+- O que ela não quer atrair: quem pede desconto o tempo todo, desconfia de orientação baseada em evidência ou negligencia a saúde do animal. O post afasta esse público mostrando o cuidado, nunca brigando com ninguém.
+
+### Voz
+
+- **Acolhedora em primeiro lugar, técnica em segundo.** Abraça e entende o tutor; depois mostra o porquê, com o detalhe que um tutor consegue usar.
+- **Fala direto com o tutor**, frase curta, palavra de consultório. Sem rodeio e sem pose: o post diz o que fazer e por quê.
+- **Não é** desafiadora, formal, mandona nem engraçadinha. O humor das artes vem da imagem (o gato no pote, o laço no filhote), não de piada no texto.
+- O máximo de provocação é uma pergunta: "Teu gato bebe água suficiente?". Nunca acusar, nunca envergonhar o tutor. Na série "Não fazem…", o alvo é o hábito, não a pessoa.
+- **Você ou tu, um por post.** "Tu" sempre conjugado ("tu sabes", "teu gato"); nunca "tu vai". Na dúvida, "você".
+- Palavras dela: "pacientinho", "paciente", "tutor". Emojis que ela usa: 💗 🫶 🥰 ☺️, na legenda e com moderação. Na arte, no máximo um emoji, o bicho do assunto.
+- Jargão traduzido na mesma frase: "filária, o verme do coração".
+- Linha ética: nada de dose, marca de remédio como indicação geral, promessa de cura ou diagnóstico à distância. Quando o assunto pede avaliação, o post termina mandando avaliar.
+- Toda informação de saúde passa pela Barbara antes de publicar.
+
+### Escrita sem cara de IA
+
+O texto tem que soar como a Barbara falando no consultório. Corte sem dó:
+
+- Aberturas prontas: "Você sabia que…?", "Vamos falar sobre…", "Neste post…", "Hoje eu vou te contar…", "Muita gente não sabe, mas…".
+- Muletas: "É importante ressaltar", "Vale lembrar", "Afinal", "Ou seja", "E o melhor?", "Spoiler:", "Mas calma!", "Fica a dica", "Bora?".
+- Construções de efeito: "Não é só X, é Y", "Mais do que X, é Y", pergunta seguida de resposta de uma palavra ("O resultado? Saúde."), frase de três adjetivos ("cuidado, carinho e atenção").
+- Palavras infladas: jornada, universo, mergulhar, desvendar, transformar, essencial, fundamental, incrível, poderoso, segredo, dicas valiosas.
+- Apelidos genéricos: "melhor amigo de quatro patas", "peludinho", "pet parent", "filho de quatro patas".
+- Travessão para aparte, ponto de exclamação em toda frase, emoji em toda linha, bloco de hashtags na arte, "Conta pra gente!" (ela é uma pessoa: "me conta").
+- Dados e porcentagens que não vieram de uma fonte que a Barbara confirmou.
+- Teste final: leia em voz alta. Se a Barbara não falaria assim para um tutor na consulta, reescreva.
 
 ### Formato
 
-- Cada slide tem **1080 × 1350 px (4:5)**. Carrossel de **7 a 10 slides**.
-- Margem lateral `margem` (80 px). Área de conteúdo de y 188 a y 1162 (`topo-seguro`). Texto nunca sai dela.
-- Uma ideia por slide, até 30 palavras. Corpo mínimo `texto-menor` (40 px).
-- Alinhe o texto à esquerda. Só a tarja é centralizada. Não justifique.
+- Carrossel e post estático em **1080 × 1350 px (4:5)**. Carrossel de 7 a 10 slides.
+- Margem lateral `margem` (80 px). Texto corrido fica dentro de x 80 a 1000. Manchete e personagem podem ocupar o slide inteiro.
+- Uma ideia por slide. Corpo mínimo `texto-menor` (40 px).
+
+### Composição: variar é a regra
+
+- **Nunca a mesma composição duas vezes seguidas.** Troque o alinhamento (esquerda, direita, centro, justificado), a posição do bloco (topo, meio, pé, lateral) e a escala.
+- **Contraste de tamanho:** manchete grande (`bf-manchete`, 88 a 136 px) ao lado de texto pequeno (40 a 50 px). O salto de tamanho cria a hierarquia, não a cor.
+- **Texto justificado** (`bf-a-just`) só em coluna estreita (`bf-col-40` ou `bf-col-50`), ao lado de uma imagem.
+- **Sublinhado** (`bf-sub`) na expressão-chave da manchete, uma por slide.
+- **Personagem recortado** (`bf-personagem`, PNG sem fundo): pode sangrar pela borda, ficar na frente da manchete ou atrás dela (`bf-personagem--atras`), mas não cobre a palavra-chave nem a moldura. Um personagem por slide.
+- **Foto de fundo + personagem:** vale misturar a foto em sangria com um recorte por cima, desde que o texto tenha uma tarja ou `bf-scrim` por trás.
+- **Patas com força variável:** grandes (`bf-pata--g`) e fortes (`bf-pata--forte`) atrás de um recorte em fundo claro; pequenas e suaves (`bf-pata--suave`) atrás de texto corrido. Varie tamanho, giro e opacidade de um slide para o outro.
+- O que não varia: cores, fontes, moldura (símbolo, assinatura, arroba) e margem do texto corrido.
 
 ### Cores
 
-- Três cores fazem a marca: `ameixa` (principal), `creme` (respiro) e `salvia` (apoio). `vinho` e `papel` são as variações de fundo dos carrosséis.
-- Fundos permitidos e a cor do texto em cada um:
+- Três cores fazem a marca: `ameixa` (principal), `creme` (respiro) e `salvia` (apoio). `vinho` e `papel` são as variações de fundo.
 
 | Fundo | Classe | Texto | Uso |
 | --- | --- | --- | --- |
 | `ameixa` #653A47 | `bf-slide--ameixa` | `creme` | Padrão. Encerramento, números, texto. |
-| `vinho` #3D101E | `bf-slide--vinho` | `creme` | Slide com foto emoldurada e patas. |
-| `creme` #F7F0E4 | `bf-slide--creme` | `ameixa` | Meio a meio, números. |
+| `vinho` #3D101E | `bf-slide--vinho` | `creme` | Manchete lateral com recorte, foto emoldurada. |
+| `creme` #F7F0E4 | `bf-slide--creme` | `ameixa` | Manchete com recorte e patas fortes, meio a meio. |
 | `papel` #F4EFE6 | `bf-slide--papel` | `ameixa` | Cartão e texto puro. |
-| `salvia` #A0AD90 | `bf-slide--salvia` | `creme` em 50 px ou mais; `ameixa-ink` abaixo disso | Alternância, encerramento. |
+| `salvia` #A0AD90 | `bf-slide--salvia` | `creme` em 50 px ou mais; `ameixa-ink` abaixo | Alternância, encerramento, estático. |
 | foto | `bf-slide--foto` | `creme`, sempre com tarja ou `bf-scrim` | Capa e conteúdo. |
 
-- Nunca use branco puro, preto puro, degradê colorido ou cor fora desta lista. O azul clínico não existe nesta marca.
-- Nunca repita o mesmo fundo em dois slides seguidos.
-- O creme sobre `salvia` vem das artes aprovadas e tem contraste baixo (2,1:1). Mantenha-o só em texto grande; para texto menor, use `.bf-ink`.
+- Nunca branco puro, preto puro, degradê colorido ou cor fora da lista. Não existe azul clínico nesta marca.
+- Nunca o mesmo fundo em dois slides seguidos.
+- Creme sobre `salvia` tem contraste baixo (2,1:1): só em texto de 50 px ou mais.
 
 ### Tipografia
 
-- **Parkinsans** é a voz dos títulos: `titulo`, `tarja`, `punch`, `etiqueta` e `numero`. Pesos 400, 700 e 800.
-- **Manrope** é o texto corrido (`texto`, `legenda`) e a moldura (`assinatura`). Peso 400, destaque em 700.
-- As duas estão no Google Fonts. Nunca troque por outra fonte; se não carregar, pare e avise.
-- Recoleta e Montserrat são as fontes do logotipo e do manual impresso. Não entram no carrossel.
-- O contraste do slide vem do par leve + pesado: texto em 400 e, logo abaixo, a frase de impacto em `punch` 800.
+- **Parkinsans** nos títulos, manchetes, tarjas, punches e números (400, 700, 800). **Manrope** no texto corrido e na moldura (400, destaque em 700). As duas no Google Fonts; não troque.
+- `bf-gasto` aplica a textura de borda gasta das artes do Figma; use na manchete e na tarja, nunca no texto pequeno.
+- Recoleta e Montserrat são do logotipo e do impresso. Não entram no post.
 
 ### Moldura fixa
 
-- Todo slide leva o símbolo no canto superior esquerdo (`.bf-logo`), "by barbara f tatsch" no superior direito (`.bf-by`) e "//@barbarafonsecavet" no inferior esquerdo (`.bf-handle`). Mesma posição, mesmo tamanho, em todos.
-- No carrossel entra só o símbolo, nunca o logotipo completo.
+- Todo slide leva o símbolo no canto superior esquerdo (`.bf-logo`), "by barbara f tatsch" no superior direito (`.bf-by`) e "//@barbarafonsecavet" no inferior esquerdo (`.bf-handle`). Mesma posição em todos.
+- No post entra só o símbolo, nunca o logotipo completo.
 
 ### Tarja
 
-- A tarja é a assinatura visual: o título quebrado em linhas, cada linha dentro de uma caixa de canto vivo, com 8 px entre elas.
-- Use na capa e nos slides sobre foto. `ameixa` com texto `creme` é o padrão; `salvia` alterna.
-- Uma tarja por slide, 2 a 4 linhas, até 26 caracteres por linha.
+- O título quebrado em linhas, cada linha numa caixa de canto vivo. Use na capa e nos slides sobre foto. `ameixa` é o padrão; `salvia` alterna. 2 a 4 linhas.
 
 ### Fotografia
 
-- Animal de verdade, luz natural, em casa ou na consulta. Rosto do animal sempre livre de texto.
-- Foto em sangria (`.bf-fundo`) pede tarja ou `.bf-scrim`. Foto emoldurada (`.bf-foto`) tem `raio-foto` (10 px).
-- Recortes sem fundo e colagens divertidas cabem no cartão; uma por carrossel.
-- Não gere com IA um animal doente, ferido ou em sofrimento. Para falar de doença, mostre o animal bem cuidado.
-
-### Grafismos
-
-- Pata em marca-d'água (`.bf-pata`) a 12%, sangrando para fora, nos fundos lisos.
-- Grão claro sobre todo slide (já vem em `.bf-slide`).
-- Ícones de curtir, salvar e enviar só no encerramento.
-- Sem sombra, sem borda, sem contorno em texto, sem emoji decorativo, sem ilustração de banco.
+- Primeiro as fotos reais da Barbara (`assets/Fotos`, `assets/Recortes`): pacientes no consultório, ela atendendo, mutirão. Foto real ganha de banco de imagem.
+- Banco ou imagem gerada só para personagem lúdico (o gato no pote, o filhote de laço) e nunca de animal doente, ferido ou em sofrimento.
+- Rosto do animal livre de texto. Foto com pessoas de fora (mutirão) só com autorização de quem aparece.
 
 ### Estrutura do carrossel
 
-1. **Capa** (`CapaFoto`): o gancho em tarja. Uma pergunta que o tutor se faz ou uma lista com número.
-2. **Contexto** (`FotoTarja` ou `TextoFoto`): a história ou o primeiro item.
-3. **Desenvolvimento** (`MeioAMeio`, `Numero`, `TextoPuro`): um passo por slide.
-4. **Virada** (`Cartao`): o que ninguém conta, o olhar da veterinária.
-5. **O que fazer** (`Faixas` ou `Numero`): as atitudes práticas.
-6. **Encerramento** (`Encerramento`): amarra o tema e faz um pedido só (comentar, salvar ou enviar).
+1. **Capa:** o gancho em tarja ou manchete. Uma pergunta que o tutor se faz, uma lista com número ou o hábito que ele tem.
+2. **Contexto:** a história ou o primeiro item.
+3. **Desenvolvimento:** um passo por slide, cada um com composição diferente.
+4. **Virada:** o olhar da veterinária, o que só quem atende sabe.
+5. **O que fazer:** a atitude prática.
+6. **Encerramento:** amarra o tema e faz um pedido só (comentar, salvar ou enviar).
 
-Cada slide termina deixando a pergunta que o próximo responde.
+Post estático: uma manchete, uma explicação curta, um personagem. Funciona sozinho no feed.
 
 ### Antes de entregar
 
-- [ ] 1080 × 1350 em todos; moldura no mesmo lugar em todos.
+- [ ] 1080 × 1350; moldura no mesmo lugar em todos.
 - [ ] Só as cores e as duas fontes do sistema.
-- [ ] Nenhum fundo repetido em sequência; capa com foto e tarja.
-- [ ] Até 30 palavras por slide; nenhum texto fora da área de conteúdo nem sobre o rosto do animal.
-- [ ] Negrito em poucas palavras; gramática revisada; "Barbara" sem acento.
-- [ ] Recomendação de saúde termina mandando procurar o veterinário.
+- [ ] Nenhum fundo nem composição repetidos em sequência.
+- [ ] Texto lido em voz alta soa como a Barbara; nada da lista "sem cara de IA".
+- [ ] Você ou tu, um só, conjugado certo.
+- [ ] Informação de saúde conferida pela Barbara; nada de dose ou promessa.
 - [ ] Último slide com um pedido só.
 
 
@@ -264,6 +280,74 @@ Copie o modelo, troque só o texto e o `src` da foto. Não invente classe nova.
 </section>
 ```
 
+### Manchete com recorte (estático ou slide)
+
+```html
+<section class="bf-slide bf-slide--creme">
+  <i class="bf-pata bf-pata--g bf-pata--forte" style="right:-260px;top:-220px;transform:rotate(16deg)"></i>
+  <i class="bf-pata bf-pata--m bf-pata--forte" style="left:-200px;top:330px;transform:rotate(-20deg)"></i>
+  <i class="bf-pata bf-pata--m bf-pata--media" style="right:-150px;bottom:-120px;transform:rotate(8deg)"></i>
+  <i class="bf-logo"></i><span class="bf-by">by barbara f tatsch</span>
+  <span class="bf-handle">//@barbarafonsecavet</span>
+  <h1 class="bf-livre bf-manchete bf-gasto bf-a-centro" style="left:60px;right:60px;top:200px">Nem todo cachorro precisa de <span class="bf-sub">antipulgas</span> o ano inteiro.</h1>
+  <div class="bf-livre bf-col-40" style="left:80px;top:760px;display:flex;flex-direction:column;gap:40px">
+    <p class="bf-texto bf-texto--menor bf-a-just">Depende da rotina dele: se vai pra rua, se convive com outros bichos, se já teve <b>pulga em casa</b>. Eu avalio antes de indicar.</p>
+    <p class="bf-punch" style="font-size:44px">Pergunta na consulta.</p>
+  </div>
+  <img class="bf-personagem" src="RECORTE.png" alt="" style="right:40px;bottom:0;height:720px">
+</section>
+```
+
+### Manchete lateral com recorte
+
+```html
+<section class="bf-slide bf-slide--vinho">
+  <i class="bf-pata bf-pata--suave" style="left:300px;top:-180px;transform:rotate(-12deg)"></i>
+  <i class="bf-pata bf-pata--m bf-pata--suave" style="left:420px;bottom:-200px;transform:rotate(20deg)"></i>
+  <i class="bf-logo"></i><span class="bf-by">by barbara f tatsch</span>
+  <span class="bf-handle">//@barbarafonsecavet</span>
+  <div class="bf-livre" style="left:80px;top:200px;width:580px;display:flex;flex-direction:column;gap:44px">
+    <h1 class="bf-manchete bf-manchete--m bf-gasto">Filhote só pisa na rua com a vacina completa.</h1>
+    <p class="bf-texto bf-texto--menor">Até a última dose fazer efeito, ele ainda não tá protegido contra <b>parvovirose</b> e <b>cinomose</b>. Passear no colo pode.</p>
+  </div>
+  <img class="bf-personagem" src="RECORTE.png" alt="" style="right:-30px;bottom:0;height:1020px">
+</section>
+```
+
+### Foto com texto à direita
+
+```html
+<section class="bf-slide bf-slide--foto">
+  <img class="bf-fundo" src="FOTO.jpg" alt="">
+  <div class="bf-scrim"></div>
+  <i class="bf-logo"></i><span class="bf-by">by barbara f tatsch</span>
+  <span class="bf-handle">//@barbarafonsecavet</span>
+  <div class="bf-body bf-body--fim bf-a-dir" style="gap:30px">
+    <h2 class="bf-tarja bf-tarja--salvia bf-gasto" style="align-items:flex-end">
+      <span>Consulta de gato</span>
+      <span>tem <b>outro ritmo.</b></span>
+    </h2>
+    <p class="bf-texto bf-texto--menor bf-col-60">Na vacina eu uso petisco pra distrair. A picada passa bem mais tranquila, pra ele e pra você.</p>
+  </div>
+</section>
+```
+
+### Post estático
+
+```html
+<section class="bf-slide bf-slide--salvia">
+  <i class="bf-pata bf-pata--m bf-pata--media" style="right:60px;top:120px;transform:rotate(14deg);color:var(--bf-ameixa)"></i>
+  <i class="bf-logo"></i><span class="bf-by">by barbara f tatsch</span>
+  <span class="bf-handle">//@barbarafonsecavet</span>
+  <div class="bf-livre bf-ink" style="left:80px;top:200px;width:700px;display:flex;flex-direction:column;gap:28px">
+    <h1 class="bf-manchete bf-manchete--m bf-gasto">Dois gatos em casa?</h1>
+    <p class="bf-texto">Uma caixa de areia <b>pra cada um</b>, mais uma. E os potes de comida longe da caixa.</p>
+    <p class="bf-texto bf-texto--menor">Gato não gosta de dividir banheiro nem de comer perto dele.</p>
+  </div>
+  <img class="bf-personagem" src="RECORTE.png" alt="" style="right:0;bottom:0;height:640px">
+</section>
+```
+
 ### Encerramento
 
 ```html
@@ -271,7 +355,7 @@ Copie o modelo, troque só o texto e o `src` da foto. Não invente classe nova.
   <i class="bf-logo"></i><span class="bf-by">by barbara f tatsch</span>
   <span class="bf-handle">//@barbarafonsecavet</span>
   <div class="bf-body bf-body--centro">
-    <p class="bf-texto bf-texto--menor">O Hachiko ficou sempre ao lado do professor. O teu fica sempre ao teu lado. A parte de cuidar dele é <b>contigo</b>.</p>
+    <p class="bf-texto bf-texto--menor">O Hachiko ficou sempre ao lado do professor. O seu fica sempre ao seu lado. A parte de cuidar dele é <b>com você</b>.</p>
     <p class="bf-punch bf-punch--grande">E aí, você chorou no filme?</p>
     <p class="bf-texto">Confessa aqui</p>
     <div class="bf-acoes" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.5S3.5 15.6 3.5 9.4A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8.5 2.4c0 6.2-8.5 11.1-8.5 11.1Z"/></svg><svg viewBox="0 0 24 24"><path d="M6.5 3.5h11v17L12 16l-5.5 4.5v-17Z"/></svg><svg viewBox="0 0 24 24"><path d="M21 3 3 10.2l7.2 2.6L12.8 20 21 3ZM10.2 12.8 21 3"/></svg></div>
@@ -410,6 +494,33 @@ Copie o modelo, troque só o texto e o `src` da foto. Não invente classe nova.
 /* ---------- Encerramento: ícones de ação ---------- */
 .bf-acoes { display: flex; gap: 30px; margin-top: 26px; }
 .bf-acoes svg { width: 58px; height: 58px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Composição livre (nov/2026): variar escala, alinhamento e posição ---------- */
+.bf-manchete { font: 700 112px/.98 var(--bf-display); letter-spacing: -.02em; text-wrap: balance; }
+.bf-manchete--xl { font-size: 136px; }
+.bf-manchete--m { font-size: 88px; }
+.bf-sub { text-decoration: underline; text-decoration-thickness: .07em; text-underline-offset: .12em; text-decoration-skip-ink: none; }
+.bf-a-esq { text-align: left; align-items: flex-start; }
+.bf-a-dir { text-align: right; align-items: flex-end; }
+.bf-a-centro { text-align: center; align-items: center; }
+.bf-a-just { text-align: justify; text-align-last: left; hyphens: auto; -webkit-hyphens: auto; }
+.bf-col-40 { max-width: 40%; } .bf-col-50 { max-width: 50%; } .bf-col-60 { max-width: 60%; }
+.bf-livre { position: absolute; z-index: 2; }
+.bf-personagem { position: absolute; z-index: 3; display: block; height: auto; pointer-events: none; }
+.bf-personagem--atras { z-index: 1; }
+/* Pata: tamanho e força variam. Use --bf-pata-op para a opacidade (padrão .12). */
+.bf-pata { opacity: var(--bf-pata-op, .12); }
+.bf-pata--forte { --bf-pata-op: .28; }
+.bf-pata--media { --bf-pata-op: .18; }
+.bf-pata--suave { --bf-pata-op: .08; }
+.bf-pata--g { width: 860px; height: 860px; }
+.bf-pata--m { width: 520px; height: 520px; }
+/* Texto gasto: bordas levemente comidas, como nas artes exportadas do Figma */
+.bf-gasto {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -9 7.1'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -9 7.1'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  -webkit-mask-size: 240px; mask-size: 240px;
+}
 ```
 
 ## 5. Esqueleto do arquivo final

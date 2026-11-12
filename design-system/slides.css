@@ -126,3 +126,30 @@
 /* ---------- Encerramento: ícones de ação ---------- */
 .bf-acoes { display: flex; gap: 30px; margin-top: 26px; }
 .bf-acoes svg { width: 58px; height: 58px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Composição livre (nov/2026): variar escala, alinhamento e posição ---------- */
+.bf-manchete { font: 700 112px/.98 var(--bf-display); letter-spacing: -.02em; text-wrap: balance; }
+.bf-manchete--xl { font-size: 136px; }
+.bf-manchete--m { font-size: 88px; }
+.bf-sub { text-decoration: underline; text-decoration-thickness: .07em; text-underline-offset: .12em; text-decoration-skip-ink: none; }
+.bf-a-esq { text-align: left; align-items: flex-start; }
+.bf-a-dir { text-align: right; align-items: flex-end; }
+.bf-a-centro { text-align: center; align-items: center; }
+.bf-a-just { text-align: justify; text-align-last: left; hyphens: auto; -webkit-hyphens: auto; }
+.bf-col-40 { max-width: 40%; } .bf-col-50 { max-width: 50%; } .bf-col-60 { max-width: 60%; }
+.bf-livre { position: absolute; z-index: 2; }
+.bf-personagem { position: absolute; z-index: 3; display: block; height: auto; pointer-events: none; }
+.bf-personagem--atras { z-index: 1; }
+/* Pata: tamanho e força variam. Use --bf-pata-op para a opacidade (padrão .12). */
+.bf-pata { opacity: var(--bf-pata-op, .12); }
+.bf-pata--forte { --bf-pata-op: .28; }
+.bf-pata--media { --bf-pata-op: .18; }
+.bf-pata--suave { --bf-pata-op: .08; }
+.bf-pata--g { width: 860px; height: 860px; }
+.bf-pata--m { width: 520px; height: 520px; }
+/* Texto gasto: bordas levemente comidas, como nas artes exportadas do Figma */
+.bf-gasto {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -9 7.1'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -9 7.1'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  -webkit-mask-size: 240px; mask-size: 240px;
+}
