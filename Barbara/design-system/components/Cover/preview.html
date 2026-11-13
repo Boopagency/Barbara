@@ -1,0 +1,30 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../bundle.css">
+<style>
+html,body{margin:0}
+.cv{position:relative;width:960px;height:288px;overflow:hidden;background:var(--creme,#F7F0E4)}
+.cv svg{position:absolute;inset:0}
+.ameixa{fill:var(--ameixa,#653A47)}.vinho{fill:var(--vinho,#3D101E)}.salvia{fill:var(--salvia,#A0AD90)}.areia{fill:var(--areia,#EFE4D3)}.creme{fill:var(--creme,#F7F0E4)}
+.tx{position:absolute;left:40px;bottom:36px;width:440px}
+.nm{margin:0;font:700 88px/.95 "Parkinsans",system-ui,sans-serif;letter-spacing:-.02em;color:var(--ameixa-ink,#3B1E28)}
+.tg{margin:12px 0 0;font:500 14px/1.3 "Manrope",system-ui,sans-serif;color:var(--muted,#76606A)}
+</style></head><body>
+<div class="cv">
+<!-- blocos: ameixa 140x(240+), salvia 140x(168+), vinho 140x(264+), areia 80x(120+): arcos do manual (topo com rx = metade da largura)
+     arranjo: arcos de alturas desiguais em pé, sangrando pelo pé e pela direita, a partir de x=500
+     padrão: discos ("soft, friendly, large radii"): a marca desenha com arcos e pontas redondas; discos em coluna, creme recortados dos arcos e ameixa/salvia sobre o fundo
+     escalas: margem 80 (largura do arco areia), raio-foto 10 (raio dos discos), bloco 28 (passo dos discos) -->
+<svg viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
+  <rect class="areia" x="496" y="168" width="80" height="200" rx="40"/>
+  <rect class="ameixa" x="592" y="48" width="140" height="320" rx="70"/>
+  <rect class="salvia" x="748" y="120" width="140" height="320" rx="70"/>
+  <rect class="vinho" x="904" y="24" width="140" height="320" rx="70"/>
+  <circle class="creme" cx="662" cy="118" r="10"/><circle class="creme" cx="662" cy="146" r="10"/><circle class="creme" cx="662" cy="174" r="10"/>
+  <circle class="creme" cx="818" cy="190" r="10"/><circle class="creme" cx="818" cy="218" r="10"/>
+  <circle class="ameixa" cx="536" cy="132" r="10"/><circle class="salvia" cx="536" cy="104" r="10"/><circle class="ameixa" cx="536" cy="76" r="10"/>
+</svg>
+<div class="tx"><p class="nm">Barbara<br>Fonseca</p><p class="tg">Médica veterinária. Carrosséis em 1080 × 1350.</p></div>
+</div>
+</body></html>
