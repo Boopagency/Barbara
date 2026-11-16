@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Manrope:wght@400..800&display=swap");
+body{margin:0;background:#ccc}
+.tira{display:flex;flex-wrap:wrap;gap:40px;padding:40px;width:4440px}
+.s{position:relative;width:1080px;height:1350px;overflow:hidden;flex:none;font-family:Manrope,sans-serif}
+.creme{background:#F4EFE6;color:#653A47}
+.ameixa{background:#653A47;color:#F7F0E4}
+.salvia{background:#A0AD90;color:#3B1E28}
+/* moldura do Figma */
+.s .bf-logo{left:80px;top:80px;width:66px;height:69px;z-index:5}
+.by,.handle{position:absolute;z-index:5;margin:0;font:400 24px/1 Manrope,sans-serif}
+.by{right:80px;top:80px}.handle{left:80px;bottom:70px}
+.foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* patas grandes ao fundo */
+.pata{position:absolute;z-index:0;background:#E3D2D2;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cellipse cx='15' cy='46' rx='10' ry='14.5' transform='rotate(-22 15 46)'/%3E%3Cellipse cx='37' cy='22' rx='11' ry='16.5' transform='rotate(-7 37 22)'/%3E%3Cellipse cx='63' cy='22' rx='11' ry='16.5' transform='rotate(7 63 22)'/%3E%3Cellipse cx='85' cy='46' rx='10' ry='14.5' transform='rotate(22 85 46)'/%3E%3Cpath d='M50 47c15 0 33 19 30 35-3 13-17 9-30 9s-27 4-30-9c-3-16 15-35 30-35Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cellipse cx='15' cy='46' rx='10' ry='14.5' transform='rotate(-22 15 46)'/%3E%3Cellipse cx='37' cy='22' rx='11' ry='16.5' transform='rotate(-7 37 22)'/%3E%3Cellipse cx='63' cy='22' rx='11' ry='16.5' transform='rotate(7 63 22)'/%3E%3Cellipse cx='85' cy='46' rx='10' ry='14.5' transform='rotate(22 85 46)'/%3E%3Cpath d='M50 47c15 0 33 19 30 35-3 13-17 9-30 9s-27 4-30-9c-3-16 15-35 30-35Z'/%3E%3C/svg%3E") center/contain no-repeat}
+.salvia .pata{background:#B2BDA3}
+/* texto */
+.miolo{position:absolute;z-index:2;left:80px;right:80px;top:200px;bottom:150px;display:flex;flex-direction:column;justify-content:center;gap:40px}
+.titulo{margin:0;font:700 92px/1.04 Parkinsans,sans-serif;letter-spacing:-.015em;text-align:center}
+.titulo u{text-decoration-thickness:6px;text-underline-offset:12px}
+.corpo{margin:0;font:400 46px/1.32 Manrope,sans-serif}
+.corpo b{font-weight:800}
+.fecho{margin:0;font:800 50px/1.2 Manrope,sans-serif}
+.recorte{position:absolute;z-index:1}
+.bf-tarja{font:400 60px/1.08 Parkinsans,sans-serif;gap:10px}
+.bf-tarja b{font-weight:700}
+.bf-tarja>span{background:#653A47;color:#F7F0E4}
+.bf-tarja--salvia>span{background:#A0AD90;color:#3B1E28}
+.etiqueta{display:inline-block;padding:6px 18px 10px;background:#D9C2C6;color:#3B1E28;font:400 46px/1.1 Manrope,sans-serif}
+.pag{position:absolute;z-index:5;right:80px;bottom:70px;margin:0;font:700 22px/1 Parkinsans,sans-serif;letter-spacing:.12em;opacity:.7}
