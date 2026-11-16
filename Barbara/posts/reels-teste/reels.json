@@ -1,0 +1,238 @@
+[
+ {
+  "id": "01-voz-de-bebe",
+  "foto": "pet-golden.webp",
+  "pos": "baixo",
+  "cor": "ameixa",
+  "linhas": [
+   "O <b>único</b> que acha",
+   "minha <b>voz de bebê</b>",
+   "totalmente <b>normal</b>"
+  ]
+ },
+ {
+  "id": "02-dormem-o-dia-inteiro",
+  "foto": "buldogue-e-pequines.jpg",
+  "pos": "cima",
+  "cor": "ameixa",
+  "linhas": [
+   "Eles dormem o <b>dia inteiro</b>",
+   "e ainda <b>acordam cansados</b>"
+  ]
+ },
+ {
+  "id": "03-nao-pagam-aluguel",
+  "foto": "dois-gatos.jpg",
+  "pos": "baixo",
+  "cor": "salvia",
+  "linhas": [
+   "Eles <b>não pagam</b> aluguel,",
+   "mas <b>mandam</b> na <b>casa inteira</b>"
+  ]
+ },
+ {
+  "id": "04-gato-pra-encarar",
+  "foto": "gato-cinza-cadeira.jpg",
+  "pos": "cima",
+  "cor": "ameixa",
+  "linhas": [
+   "<b>Desculpa</b>, não posso.",
+   "Tenho um <b>gato</b> pra <b>encarar</b>."
+  ],
+  "desfocar": [
+   [
+    200,
+    780,
+    1180,
+    1100
+   ]
+  ]
+ },
+ {
+  "id": "05-mais-petisco",
+  "foto": "shih-tzu-tapete.jpg",
+  "pos": "baixo",
+  "cor": "ameixa",
+  "linhas": [
+   "Esse <b>olhar</b> já me arrancou",
+   "<b>mais petisco</b> do que deveria"
+  ]
+ },
+ {
+  "id": "06-terapia-quatro-patas",
+  "foto": "filhote-gato-no-casaco.jpg",
+  "pos": "baixo",
+  "cor": "salvia",
+  "linhas": [
+   "<b>Terapia</b> de <b>quatro patas</b>,",
+   "sem <b>horário marcado</b>"
+  ]
+ },
+ {
+  "id": "07-cafune",
+  "foto": "pet-carinho.webp",
+  "pos": "baixo",
+  "cor": "ameixa",
+  "linhas": [
+   "Um <b>cafuné</b> no queixo",
+   "<b>resolve</b> quase <b>tudo</b>"
+  ]
+ },
+ {
+  "id": "08-escolheu-a-roupa",
+  "foto": "vira-lata-caramelo-roupa-rosa.jpg",
+  "pos": "cima",
+  "cor": "ameixa",
+  "linhas": [
+   "Ela <b>escolheu</b> a roupa.",
+   "<b>Eu</b> só <b>concordei</b>."
+  ]
+ },
+ {
+  "id": "09-modelo-integral",
+  "foto": "dalmata-mesa.jpg",
+  "pos": "baixo",
+  "cor": "salvia",
+  "linhas": [
+   "<b>Modelo</b> em tempo integral,",
+   "<b>paciente</b> nas horas vagas"
+  ],
+  "desfocar": [
+   [
+    600,
+    120,
+    280,
+    460
+   ]
+  ]
+ },
+ {
+  "id": "10-paciente-do-dia",
+  "foto": "maltes-dormindo-mesa.jpg",
+  "pos": "cima",
+  "cor": "ameixa",
+  "linhas": [
+   "<b>Paciente do dia:</b>",
+   "zero pressa,",
+   "<b>muita fofura</b>"
+  ],
+  "desfocar": [
+   [
+    180,
+    480,
+    520,
+    460
+   ],
+   [
+    520,
+    0,
+    360,
+    420
+   ]
+  ]
+ },
+ {
+  "id": "11-dono-do-consultorio",
+  "foto": "pitbull-cinza-mesa.jpg",
+  "pos": "baixo",
+  "cor": "ameixa",
+  "linhas": [
+   "<b>Primeira consulta</b> e já",
+   "se acha o <b>dono</b>",
+   "do consultório"
+  ]
+ },
+ {
+  "id": "12-revisou-o-prontuario",
+  "foto": "gata-escaminha-mesa.jpg",
+  "pos": "baixo",
+  "cor": "salvia",
+  "linhas": [
+   "Ela <b>revisou</b> o <b>prontuário</b>",
+   "antes de <b>mim</b>"
+  ],
+  "desfocar": [
+   [
+    -300,
+    760,
+    1680,
+    1100
+   ]
+  ]
+ },
+ {
+  "id": "13-petisco-faz-parte",
+  "foto": "tosa-filhote-preto.jpg",
+  "pos": "baixo",
+  "cor": "ameixa",
+  "linhas": [
+   "Na minha consulta,",
+   "o <b>petisco</b> faz parte",
+   "do <b>atendimento</b>"
+  ]
+ },
+ {
+  "id": "14-e-so-a-boca",
+  "foto": "exame-boca.jpg",
+  "pos": "baixo",
+  "cor": "ameixa",
+  "linhas": [
+   "<b>Ah, é só a boca.</b>",
+   "E tudo bem pensar assim."
+  ],
+  "apoio": "Mas ela conta <b>muita coisa</b> sobre ele 🦷"
+ },
+ {
+  "id": "15-se-ele-pudesse-falar",
+  "foto": "gato-frajola-jardim.jpg",
+  "pos": "baixo",
+  "cor": "salvia",
+  "linhas": [
+   "Se ele <b>pudesse falar</b>,",
+   "seria <b>muito mais fácil</b>"
+  ]
+ },
+ {
+  "id": "16-vira-lata-ou-spitz",
+  "foto": "spitz-colar-elizabetano.jpg",
+  "pos": "baixo",
+  "cor": "ameixa",
+  "linhas": [
+   "Vira-lata ou",
+   "<b>Spitz de 10 mil</b>,",
+   "o cuidado é <b>o mesmo</b>"
+  ]
+ },
+ {
+  "id": "17-trato-meus-pacientes",
+  "foto": "barbara-consultorio.jpg",
+  "pos": "baixo",
+  "cor": "ameixa",
+  "linhas": [
+   "Trato os meus <b>pacientes</b>",
+   "como <b>quero</b> que tratem",
+   "os <b>meus</b> 💗"
+  ]
+ },
+ {
+  "id": "18-tambem-sou-tutora",
+  "foto": "ultrassom-pitbull.jpg",
+  "pos": "baixo",
+  "cor": "salvia",
+  "linhas": [
+   "<b>Eu também sou tutora.</b>",
+   "Por isso eu <b>explico tudo</b>."
+  ]
+ },
+ {
+  "id": "19-baba-de-orangotango",
+  "foto": "barbara-jaleco-preto.jpg",
+  "pos": "baixo",
+  "cor": "ameixa",
+  "linhas": [
+   "Eu queria ser",
+   "<b>babá de orangotango</b>.",
+   "Virei <b>veterinária</b> 🦧"
+  ]
+ }
+]

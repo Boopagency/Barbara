@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../design-system/components/bundle.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Manrope:wght@400..800&display=swap">
+<style>
+body{margin:0}
+.r{position:relative;width:1080px;height:1920px;overflow:hidden;background:#3B1E28;color:#F7F0E4}
+.foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.topo{position:absolute;left:0;right:0;top:0;height:420px;background:linear-gradient(180deg,rgba(59,30,40,.45),rgba(59,30,40,0))}
+.bf-logo{left:80px;top:140px;width:76px;height:80px;color:#F7F0E4}
+.by{position:absolute;right:80px;top:160px;margin:0;font:400 28px/1 Manrope,sans-serif;color:#F7F0E4}
+.handle{position:absolute;left:80px;bottom:330px;margin:0;font:400 28px/1 Manrope,sans-serif;color:#F7F0E4;text-shadow:0 2px 10px rgba(59,30,40,.6)}
+.bloco{position:absolute;left:60px;right:60px;display:flex;flex-direction:column;align-items:center;gap:22px}
+.bloco.baixo{bottom:420px}
+.bloco.cima{top:330px}
+.bf-tarja{font:400 70px/1.08 Parkinsans,sans-serif;gap:10px}
+.bf-tarja b{font-weight:700}
+.bf-tarja>span{background:#653A47;color:#F7F0E4}
+.borrao{position:absolute;z-index:1;backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);-webkit-mask-image:radial-gradient(ellipse closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse closest-side,#000 62%,transparent 100%)}
+.topo{z-index:2}.bf-logo,.by,.handle,.bloco{z-index:3}
+.bf-tarja--salvia>span{background:#A0AD90;color:#3B1E28}
+.apoio{margin:0;padding:10px 22px 14px;background:#F7F0E4;color:#3B1E28;font:400 42px/1.2 Manrope,sans-serif}
+.apoio b{font-weight:800}
+</style></head>
+<body><section class="r">
+<img class="foto" alt="">
+<div class="topo"></div>
+<i class="bf-logo"></i><p class="by">by barbara f tatsch</p>
+<div class="bloco"><div class="bf-tarja"></div></div>
+<p class="handle">//@barbarafonsecavet</p>
+</section></body></html>
