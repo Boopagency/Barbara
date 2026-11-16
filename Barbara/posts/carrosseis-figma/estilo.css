@@ -27,3 +27,33 @@ body{margin:0;background:#ccc}
 .bf-tarja--salvia>span{background:#A0AD90;color:#3B1E28}
 .etiqueta{display:inline-block;padding:6px 18px 10px;background:#D9C2C6;color:#3B1E28;font:400 46px/1.1 Manrope,sans-serif}
 .pag{position:absolute;z-index:5;right:80px;bottom:70px;margin:0;font:700 22px/1 Parkinsans,sans-serif;letter-spacing:.12em;opacity:.7}
+
+/* ===== Os 8 estilos de slide do Figma (misturar dentro do carrossel) ===== */
+.vinho{background:#3D101E;color:#F7F0E4}
+.foto-s .by,.foto-s .handle{color:#F7F0E4;text-shadow:0 1px 8px rgba(30,10,16,.5)}
+.foto-s .bf-logo{color:#F7F0E4}
+.sombra-topo{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(40,15,24,.55) 0%,rgba(40,15,24,0) 28%)}
+.sombra-baixo{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(40,15,24,.82) 0%,rgba(40,15,24,.35) 32%,rgba(40,15,24,0) 52%)}
+/* E1 foto + tarjas embaixo | E6 foto + tarjas sálvia embaixo + texto */
+.grupo-baixo{position:absolute;z-index:3;left:60px;right:60px;bottom:140px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+/* E2 foto + tarjas sálvia no topo + texto embaixo | E4 foto + tarja no topo + texto logo abaixo */
+.grupo-topo{position:absolute;z-index:3;left:60px;right:60px;top:170px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.texto-foto{margin:0;font:400 42px/1.3 Manrope,sans-serif;color:#F7F0E4;text-shadow:0 2px 12px rgba(30,10,16,.6)}
+.texto-foto b{font-weight:800}
+.texto-foto u{text-decoration-thickness:3px;text-underline-offset:6px}
+.texto-pe{position:absolute;z-index:3;left:80px;right:80px;bottom:130px}
+.texto-mini{margin:0;font:400 34px/1.32 Manrope,sans-serif;color:#F7F0E4;text-shadow:0 2px 10px rgba(30,10,16,.6)}
+.texto-mini b{font-weight:800}
+/* E5 vinho: título grande à esquerda + recorte à direita */
+.e5-titulo{position:absolute;z-index:2;left:80px;top:190px;width:600px;margin:0;font:700 98px/1.02 Parkinsans,sans-serif;letter-spacing:-.02em}
+.e5-texto{position:absolute;z-index:2;left:80px;bottom:150px;width:520px;margin:0;font:400 36px/1.34 Manrope,sans-serif}
+.e5-texto b{font-weight:800}
+/* E7 foto escura de fundo + título + foto emoldurada + texto */
+.fundo-escuro{position:absolute;inset:-40px;width:calc(100% + 80px);height:calc(100% + 80px);object-fit:cover;filter:brightness(.38) blur(6px)}
+.e7-titulo{position:absolute;z-index:2;left:60px;right:60px;top:170px;margin:0;text-align:center;font:700 84px/1.04 Parkinsans,sans-serif;color:#F7F0E4}
+.e7-quadro{position:absolute;z-index:2;left:190px;top:330px;width:700px;height:700px;object-fit:cover}
+.e7-texto{position:absolute;z-index:2;left:110px;right:110px;bottom:150px;margin:0;text-align:center;font:400 34px/1.34 Manrope,sans-serif;color:#F7F0E4}
+.e7-texto b{font-weight:800}
+/* E8 creme liso só com texto */
+.e8-texto{position:absolute;z-index:2;left:110px;right:200px;top:50%;transform:translateY(-50%);margin:0;font:400 44px/1.35 Manrope,sans-serif;color:#653A47}
+.e8-texto b{font-weight:800}
