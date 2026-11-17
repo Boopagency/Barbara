@@ -11,6 +11,7 @@ for(const r of reels){
   const bl=document.querySelector('.bloco'); bl.classList.add(r.pos);
   const t=document.querySelector('.bf-tarja'); if(r.cor==='salvia') t.classList.add('bf-tarja--salvia');
   t.innerHTML=r.linhas.map(l=>`<span>${l}</span>`).join('');
+  const v=document.createElement('span');v.className='vet';v.textContent='🩺 médica veterinária · Curitiba';bl.prepend(v);
   if(r.apoio){const a=document.createElement('p');a.className='apoio';a.innerHTML=r.apoio;bl.appendChild(a);}
   for(const [x,y,w,h] of (r.desfocar||[])){const d=document.createElement('div');d.className='borrao';Object.assign(d.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px'});document.querySelector('.foto').after(d);}
   if(r.pos==='cima') document.querySelector('.handle').style.bottom='330px';

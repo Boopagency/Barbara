@@ -15,17 +15,17 @@ body{margin:0;background:#ccc}
 .salvia .pata{background:#B2BDA3}
 /* texto */
 .miolo{position:absolute;z-index:2;left:80px;right:80px;top:200px;bottom:150px;display:flex;flex-direction:column;justify-content:center;gap:40px}
-.titulo{margin:0;font:700 92px/1.04 Parkinsans,sans-serif;letter-spacing:-.015em;text-align:center}
+.titulo{margin:0;font:700 118px/1.0 Parkinsans,sans-serif;letter-spacing:-.015em;text-align:center}
 .titulo u{text-decoration-thickness:6px;text-underline-offset:12px}
-.corpo{margin:0;font:400 46px/1.32 Manrope,sans-serif}
+.corpo{margin:0;font:400 54px/1.28 Manrope,sans-serif}
 .corpo b{font-weight:800}
-.fecho{margin:0;font:800 50px/1.2 Manrope,sans-serif}
+.fecho{margin:0;font:800 60px/1.15 Manrope,sans-serif}
 .recorte{position:absolute;z-index:1}
-.bf-tarja{font:400 60px/1.08 Parkinsans,sans-serif;gap:10px}
+.bf-tarja{font:400 72px/1.06 Parkinsans,sans-serif;gap:10px}
 .bf-tarja b{font-weight:700}
 .bf-tarja>span{background:#653A47;color:#F7F0E4}
 .bf-tarja--salvia>span{background:#A0AD90;color:#3B1E28}
-.etiqueta{display:inline-block;padding:6px 18px 10px;background:#D9C2C6;color:#3B1E28;font:400 46px/1.1 Manrope,sans-serif}
+.etiqueta{display:inline-block;padding:6px 20px 10px;background:#D9C2C6;color:#3B1E28;font:400 52px/1.1 Manrope,sans-serif}
 .pag{position:absolute;z-index:5;right:80px;bottom:70px;margin:0;font:700 22px/1 Parkinsans,sans-serif;letter-spacing:.12em;opacity:.7}
 
 /* ===== Os 8 estilos de slide do Figma (misturar dentro do carrossel) ===== */
@@ -38,22 +38,36 @@ body{margin:0;background:#ccc}
 .grupo-baixo{position:absolute;z-index:3;left:60px;right:60px;bottom:140px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
 /* E2 foto + tarjas sálvia no topo + texto embaixo | E4 foto + tarja no topo + texto logo abaixo */
 .grupo-topo{position:absolute;z-index:3;left:60px;right:60px;top:170px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
-.texto-foto{margin:0;font:400 42px/1.3 Manrope,sans-serif;color:#F7F0E4;text-shadow:0 2px 12px rgba(30,10,16,.6)}
+.texto-foto{margin:0;font:400 50px/1.28 Manrope,sans-serif;color:#F7F0E4;text-shadow:0 2px 12px rgba(30,10,16,.6)}
 .texto-foto b{font-weight:800}
 .texto-foto u{text-decoration-thickness:3px;text-underline-offset:6px}
 .texto-pe{position:absolute;z-index:3;left:80px;right:80px;bottom:130px}
-.texto-mini{margin:0;font:400 34px/1.32 Manrope,sans-serif;color:#F7F0E4;text-shadow:0 2px 10px rgba(30,10,16,.6)}
+.texto-mini{margin:0;font:400 44px/1.3 Manrope,sans-serif;color:#F7F0E4;text-shadow:0 2px 10px rgba(30,10,16,.6)}
 .texto-mini b{font-weight:800}
 /* E5 vinho: título grande à esquerda + recorte à direita */
-.e5-titulo{position:absolute;z-index:2;left:80px;top:190px;width:600px;margin:0;font:700 98px/1.02 Parkinsans,sans-serif;letter-spacing:-.02em}
-.e5-texto{position:absolute;z-index:2;left:80px;bottom:150px;width:520px;margin:0;font:400 36px/1.34 Manrope,sans-serif}
+.e5-titulo{position:absolute;z-index:2;left:80px;top:180px;width:680px;margin:0;font:700 124px/.98 Parkinsans,sans-serif;letter-spacing:-.02em}
+.e5-texto{position:absolute;z-index:2;left:80px;bottom:140px;width:560px;margin:0;font:400 46px/1.3 Manrope,sans-serif}
 .e5-texto b{font-weight:800}
 /* E7 foto escura de fundo + título + foto emoldurada + texto */
 .fundo-escuro{position:absolute;inset:-40px;width:calc(100% + 80px);height:calc(100% + 80px);object-fit:cover;filter:brightness(.38) blur(6px)}
-.e7-titulo{position:absolute;z-index:2;left:60px;right:60px;top:170px;margin:0;text-align:center;font:700 84px/1.04 Parkinsans,sans-serif;color:#F7F0E4}
-.e7-quadro{position:absolute;z-index:2;left:190px;top:330px;width:700px;height:700px;object-fit:cover}
-.e7-texto{position:absolute;z-index:2;left:110px;right:110px;bottom:150px;margin:0;text-align:center;font:400 34px/1.34 Manrope,sans-serif;color:#F7F0E4}
+.e7-titulo{position:absolute;z-index:2;left:60px;right:60px;top:160px;margin:0;text-align:center;font:700 104px/1.0 Parkinsans,sans-serif;color:#F7F0E4}
+.e7-quadro{position:absolute;z-index:2;left:230px;top:400px;width:620px;height:620px;object-fit:cover}
+.e7-texto{position:absolute;z-index:2;left:90px;right:90px;bottom:140px;margin:0;text-align:center;font:400 44px/1.3 Manrope,sans-serif;color:#F7F0E4}
 .e7-texto b{font-weight:800}
 /* E8 creme liso só com texto */
-.e8-texto{position:absolute;z-index:2;left:110px;right:200px;top:50%;transform:translateY(-50%);margin:0;font:400 44px/1.35 Manrope,sans-serif;color:#653A47}
+.e8-texto{position:absolute;z-index:2;left:90px;right:90px;top:50%;transform:translateY(-50%);margin:0;font:400 74px/1.16 Manrope,sans-serif;letter-spacing:-.015em;color:#653A47}
 .e8-texto b{font-weight:800}
+
+/* palavra gigante transparente pra preencher o fundo */
+.fundo-palavra{position:absolute;z-index:0;margin:0;font:800 400px/.82 Parkinsans,sans-serif;letter-spacing:-.05em;white-space:nowrap;pointer-events:none}
+.creme .fundo-palavra{color:#653A47;opacity:.07}
+.vinho .fundo-palavra,.ameixa .fundo-palavra{color:#F7F0E4;opacity:.07}
+.salvia .fundo-palavra{color:#3B1E28;opacity:.08}
+.foto-s .fundo-palavra{color:#F7F0E4;opacity:.16;z-index:1}
+/* capa gigante tipo "prejudiciais" */
+.gigante{margin:0;font:800 168px/.9 Parkinsans,sans-serif;letter-spacing:-.045em;color:#F7F0E4;text-shadow:0 6px 30px rgba(30,10,16,.45)}
+.sub-gigante{margin:0;font:400 54px/1.1 Manrope,sans-serif;color:#F7F0E4;text-shadow:0 2px 12px rgba(30,10,16,.6)}
+.sub-gigante b{font-weight:800}
+/* mural de fotos (post de engajamento) */
+.polaroid{position:absolute;z-index:2;background:#F7F0E4;padding:16px 16px 56px;box-shadow:0 18px 40px rgba(30,10,16,.3)}
+.polaroid div{width:100%;height:100%;background-size:cover;background-position:center}
