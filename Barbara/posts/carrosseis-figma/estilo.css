@@ -71,3 +71,22 @@ body{margin:0;background:#ccc}
 /* mural de fotos (post de engajamento) */
 .polaroid{position:absolute;z-index:2;background:#F7F0E4;padding:16px 16px 56px;box-shadow:0 18px 40px rgba(30,10,16,.3)}
 .polaroid div{width:100%;height:100%;background-size:cover;background-position:center}
+
+/* ===== Capa forte, quadriculado e card sobre azulejo ===== */
+.gigante--escuro{color:#653A47;text-shadow:none}
+.sub-gigante--escuro{color:#3B1E28;text-shadow:none}
+.capa-bloco{position:absolute;z-index:3;left:70px;right:70px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.xadrez{background-color:#653A47;background-image:conic-gradient(#57303C 25%,transparent 0 50%,#57303C 0 75%,transparent 0);background-size:180px 180px;color:#F7F0E4}
+.xadrez--salvia{background-color:#A0AD90;background-image:conic-gradient(#96A486 25%,transparent 0 50%,#96A486 0 75%,transparent 0);background-size:180px 180px;color:#3B1E28}
+.xadrez .miolo,.xadrez--salvia .miolo{text-align:center;align-items:center}
+.cartaz{background:#F7F0E4;color:#3B1E28;padding:60px 56px;box-shadow:0 18px 40px rgba(30,10,16,.35);transform:rotate(-1.5deg);text-align:center}
+.cartaz .titulo{color:#653A47}
+.azulejo{background-color:#D9C2C6;background-image:linear-gradient(90deg,rgba(247,240,228,.85) 7px,transparent 7px),linear-gradient(0deg,rgba(247,240,228,.85) 7px,transparent 7px);background-size:180px 180px;background-position:-60px -40px}
+.azulejo--salvia{background-color:#A0AD90}
+.card-foto{position:absolute;z-index:2;left:110px;top:150px;width:860px;height:820px;border-radius:44px;overflow:hidden;box-shadow:0 24px 50px rgba(30,10,16,.35);background-size:cover;background-position:center}
+.card-foto .tarja-card{position:absolute;left:0;right:0;bottom:40px;display:flex;justify-content:center}
+.bilhete{position:absolute;z-index:3;left:90px;top:1000px;width:840px;min-height:230px;box-sizing:border-box;padding:46px 60px 40px 90px;background:#F7F0E4;background-image:repeating-linear-gradient(180deg,transparent 0 58px,rgba(59,30,40,.12) 58px 60px);transform:rotate(-1deg);clip-path:polygon(0 0,100% 0,100% 100%,0 100%,22px 94%,0 88%,22px 82%,0 76%,22px 70%,0 64%,22px 58%,0 52%,22px 46%,0 40%,22px 34%,0 28%,22px 22%,0 16%,22px 10%,0 4%);text-align:center;font:400 46px/1.25 Manrope,sans-serif;color:#3B1E28}
+.bilhete b{font-weight:800}
+.polaroid span{display:block;margin-top:12px;text-align:center;font:700 26px/1.1 Manrope,sans-serif;color:#653A47}
+
+.s:has(.fundo-escuro) .bf-logo,.s:has(.fundo-escuro) .by,.s:has(.fundo-escuro) .handle{color:#F7F0E4}
